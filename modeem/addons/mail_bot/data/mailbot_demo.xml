@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modeem>
+    <data>
+        <!-- Disable modeembot on admin so that devs don't hate it -->
+        <record id="base.user_admin" model="res.users">
+            <field name="modeembot_state">disabled</field>
+        </record>
+    </data>
+</modeem>
