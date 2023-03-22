@@ -5,7 +5,7 @@ Modeem web framework for nonprofit organization
 ### Install Script
 We recommend to use use [install](install.sh)
 ```sh
-sudo wget https://raw.githubusercontent.com/modeemsa/modeem/install.sh
+sudo wget https://raw.githubusercontent.com/modeemsa/modeem/master/install.sh
 sudo chmod +x install.sh
 sudo ./install.sh
 ```
