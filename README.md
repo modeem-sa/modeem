@@ -3,13 +3,13 @@ Modeem web framework for nonprofit organization
 
 ## Installation
 ### Install Script
-We recommend to use use [install](install.sh)
+We recommend to  use [install](install.sh) for production environment
 ```sh
 sudo wget https://raw.githubusercontent.com/modeemsa/modeem/master/install.sh
 sudo chmod +x install.sh
 sudo ./install.sh
 ```
-Or you can install it manually as the following:
+Please use the following installation for development environment
 
 ### Python
 Modeem requires Python 3.8 or later to run. Use your package manager to download and install Python 3 on your machine if it is not already done

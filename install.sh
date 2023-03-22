@@ -83,7 +83,7 @@ sudo chown $USER:$USER /var/log/$USER
 # Install modeem
 #--------------------------------------------------
 echo -e "\n==== Installing modeem Server ===="
-sudo git clone git@github.com:modeemsa/modeem.git $HOME_EXT/
+sudo git clone https://github.com/modeemsa/modeem.git $HOME_EXT/
 
 echo -e "\n---- Create custom module directory ----"
 sudo su $USER -c "mkdir $HOME/custom"
