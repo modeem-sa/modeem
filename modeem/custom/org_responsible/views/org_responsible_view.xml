@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<modeem>
+    <record id="org_responsible_view" model="ir.ui.view">
+        <field name="name">org.responsible.view</field>
+        <field name="model">org.responsible</field>
+        <field name="arch" type="xml">
+            <form string="My Form">
+                <sheet>
+                    <header>
+                        <button name="escalate" type="object" string="Escalate" class="oe_highlight"
+                                attrs="{'invisible':[('state','!=','draft')]}"/>
+                        <button name="reject" type="object" string="Reject" class="btn-danger"
+                                attrs="{'invisible':[('state','!=','draft')]}"/>
+                        <field name="state" widget="statusbar" states="draft,escalate,reject"/>
+                    </header>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="description"/>
+                            <field name="responsible_org"/>
+                            <field name="customer_name"/>
+                            <field name="customer_phone"/>
+                        </group>
+                        <group>
+                            <field name="priority" widget="priority"/>
+                            <field name="attachment" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="customer_id"/>
+                        </group>
+                    </group>
+                </sheet>
+                <!--            # Chatter-->
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="org_responsible_tree" model="ir.ui.view">
+        <field name="name">org.responsible.tree</field>
+        <field name="model">org.responsible</field>
+        <field name="arch" type="xml">
+            <tree string="Org Responsible Tree">
+                <field name="name"/>
+                <field name="customer_name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="org_responsible_action" model="ir.actions.act_window">
+        <field name="name">org_responsible_action_view</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">org.responsible</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="org_responsible_menu" name="Org Responsible" action="org_responsible_action" sequence="10"/>
+</modeem>

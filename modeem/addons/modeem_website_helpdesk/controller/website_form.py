@@ -34,44 +34,36 @@ class WebsiteFormInherit(WebsiteForm):
 
     def _handle_website_form(self, model_name, **kwargs):
         if model_name == 'help.ticket':
-
+            model_record = request.env['ir.model'].sudo().search(
+                [('model', '=', model_name)])
+            data = self.extract_data(model_record, request.params)
+            attachment_files = data.get('attachments')
+            # print(attachment_files)
+            for attachment in attachment_files:
+                t_attachment = attachment.read()
+                print("######################################")
             rec_val = {
                 'customer_name': kwargs.get('customer_name'),
-                'subject': kwargs.get('subject'),
+                'name': kwargs.get('subject'),
                 'description': kwargs.get('description'),
-                'email': kwargs.get('email_from'),
-                'phone': kwargs.get('phone'),
+                'customer_email': kwargs.get('email_from'),
+                'customer_phone': kwargs.get('phone'),
                 'priority': kwargs.get('priority'),
-                'stage_id': request.env['ticket.stage'].search(
-                    [('name', '=', 'Inbox')], limit=1).id,
-
+                'attachment': base64.encodebytes(t_attachment)
             }
-            partner = request.env['res.partner'].sudo().search(
-                [('name', '=', kwargs.get('customer_name')),
-                 ('email', '=', kwargs.get('email_from'))], limit=1)
-            if partner:
-                rec_val['customer_id'] = partner.id
-            else:
-                rec_val['public_ticket'] = True
+            # partner = request.env['res.partner'].sudo().search(
+            #     [('name', '=', kwargs.get('customer_name')),
+            #      ('customer_email', '=', kwargs.get('email_from'))], limit=1)
+            # if partner:
+            #     rec_val['customer_id'] = partner.id
+            # else:
+            #     rec_val['public_ticket'] = True
 
-            ticket_id = request.env['help.ticket'].sudo().create(rec_val)
+            ticket_id = request.env['org.responsible'].sudo().create(rec_val)
             request.session['ticket_number'] = ticket_id.name
             request.session['ticket_id'] = ticket_id.id
             model_record = request.env['ir.model'].sudo().search(
                 [('model', '=', model_name)])
-            data = self.extract_data(model_record, request.params)
-            if 'ticket_attachment' in request.params or request.httprequest.files or data.get(
-                    'attachments'):
-                attached_files = data.get('attachments')
-                for attachment in attached_files:
-                    attached_file = attachment.read()
-                    request.env['ir.attachment'].sudo().create({
-                        'name': attachment.filename,
-                        'res_model': 'help.ticket',
-                        'res_id': ticket_id.id,
-                        'type': 'binary',
-                        'datas': base64.encodebytes(attached_file),
-                    })
             request.session['form_builder_model_model'] = model_record.model
             request.session['form_builder_model'] = model_record.name
             request.session['form_builder_id'] = ticket_id.id
