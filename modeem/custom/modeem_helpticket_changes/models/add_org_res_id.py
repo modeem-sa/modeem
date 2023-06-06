@@ -13,4 +13,3 @@ class AddOrgResID(models.Model):
     def notify_org_res_state(self):
         org_responsible_record_id = self.env["org.responsible"].search([("id", "=", self.org_responsible_id.id)])
         org_responsible_record_id.message_post(body=f"The state has been changed to {self.stage_id.name}")
-        print("Ok Working ##########")

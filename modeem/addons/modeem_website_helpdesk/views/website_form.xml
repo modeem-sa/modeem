@@ -105,17 +105,19 @@
                         <h1>Support Tickets</h1>
                     </div>
                 </section>
-                <section class="s_text_block pt40 pb40 o_colored_level "
+                <section class="s_text_block pt40 pb40 o_colored_level"
                          data-snippet="s_text_block">
                     <div class="container s_allow_columns">
                         <div class="row">
                             <div class="col-lg-8 mt-4 mt-lg-0">
                                 <h5 style="line-height: 1.6;">
                                     Contact us about anything related to our
-                                    company or services.<br/>
+                                    company or services.
+                                    <br/>
                                     We'll do our best to get back to you as soon
                                     as possible.
-                                </h5><br/>
+                                </h5>
+                                <br/>
                                 <section class="s_website_form" data-vcss="001"
                                          data-snippet="s_website_form">
                                     <div class="container">
@@ -138,19 +140,23 @@
                                                                style="width: 200px"
                                                                for="contact1">
                                                             <span class="s_website_form_label_content">
-                                                                Name</span>
+                                                                Name
+                                                            </span>
                                                             <span class="s_website_form_mark">
-                                                                *</span>
+                                                                *
+                                                            </span>
                                                         </label>
                                                         <div class="col-sm">
                                                             <input id="contact1"
                                                                    type="text"
                                                                    class="form-control s_website_form_input"
                                                                    name="customer_name"
+                                                                   placeholder="الاسم"
                                                                    required=""
                                                                    data-fill-with="name"/>
                                                         </div>
-                                                    </div><br/>
+                                                    </div>
+                                                    <br/>
                                                 </div>
                                                 <div class="form-group col-12 s_website_form_field s_website_form_custom"
                                                      data-type="char"
@@ -160,16 +166,19 @@
                                                                style="width: 200px"
                                                                for="contact2">
                                                             <span class="s_website_form_label_content">
-                                                                Phone </span>
+                                                                Phone
+                                                            </span>
                                                         </label>
                                                         <div class="col-sm">
                                                             <input id="contact2"
                                                                    type="tel"
+                                                                   placeholder="رقم الجوال"
                                                                    class="form-control s_website_form_input"
                                                                    name="phone"
                                                                    data-fill-with="phone"/>
                                                         </div>
-                                                    </div><br/>
+                                                    </div>
+                                                    <br/>
                                                 </div>
                                                 <div class="form-group col-12 s_website_form_field s_website_form_required"
                                                      data-type="email"
@@ -179,19 +188,23 @@
                                                                style="width: 200px"
                                                                for="contact3">
                                                             <span class="s_website_form_label_content">
-                                                                Email</span>
+                                                                Email
+                                                            </span>
                                                             <span class="s_website_form_mark">
-                                                                *</span>
+                                                                *
+                                                            </span>
                                                         </label>
                                                         <div class="col-sm">
                                                             <input id="contact3"
                                                                    type="email"
                                                                    class="form-control s_website_form_input"
                                                                    name="email_from"
+                                                                   placeholder="البريد الالكتروني"
                                                                    required=""
                                                                    data-fill-with="email"/>
                                                         </div>
-                                                    </div><br/>
+                                                    </div>
+                                                    <br/>
                                                 </div>
                                                 <div class="form-group col-12 s_website_form_field s_website_form_custom"
                                                      data-type="char"
@@ -201,16 +214,19 @@
                                                                style="width: 200px"
                                                                for="contact4">
                                                             <span class="s_website_form_label_content">
-                                                                Company</span>
+                                                                Company
+                                                            </span>
                                                         </label>
                                                         <div class="col-sm">
                                                             <input id="contact4"
                                                                    type="text"
+                                                                   placeholder="المنظمة"
                                                                    class="form-control s_website_form_input"
                                                                    name="company"
                                                                    data-fill-with="commercial_company_name"/>
                                                         </div>
-                                                    </div><br/>
+                                                    </div>
+                                                    <br/>
                                                 </div>
                                                 <div class="form-group col-12 s_website_form_field s_website_form_required"
                                                      data-type="char"
@@ -220,18 +236,21 @@
                                                                style="width: 200px"
                                                                for="contact5">
                                                             <span class="s_website_form_label_content">
-                                                                Subject</span>
+                                                                Subject
+                                                            </span>
                                                             <span class="s_website_form_mark">
-                                                                *</span>
+                                                                *
+                                                            </span>
                                                         </label>
                                                         <div class="col-sm">
                                                             <input id="contact5"
-                                                                   type="text" placeholder="Mention your Issue here"
+                                                                   type="text" placeholder="اذكر مشكلتك هنا"
                                                                    class="form-control s_website_form_input"
                                                                    name="subject"
                                                                    required=""/>
                                                         </div>
-                                                    </div><br/>
+                                                    </div>
+                                                    <br/>
                                                 </div>
                                                 <div class="form-group col-12 s_website_form_field s_website_form_custom s_website_form_required"
                                                      data-type="text"
@@ -241,16 +260,19 @@
                                                                style="width: 200px"
                                                                for="contact6">
                                                             <span class="s_website_form_label_content">
-                                                                Description</span>
+                                                                Description
+                                                            </span>
                                                         </label>
                                                         <div class="col-sm">
                                                             <textarea
                                                                     id="contact6"
                                                                     class="form-control s_website_form_input"
-                                                                    name="description" placeholder="Issue description in detail"
+                                                                    name="description"
+                                                                    placeholder="اذكر تفاصيل مشكلتك هنا"
                                                                     required=""></textarea>
                                                         </div>
-                                                    </div><br/>
+                                                    </div>
+                                                    <br/>
                                                 </div>
 
                                                 <div class="form-group col-12 s_website_form_field s_website_form_custom s_website_form_required"
@@ -260,28 +282,31 @@
                                                         <label class="col-form-label col-sm-auto s_website_form_label"
                                                                style="width: 200px">
                                                             <span class="s_website_form_label_content">
-                                                                Priority</span>
+                                                                Priority
+                                                            </span>
                                                         </label>
                                                         <div class="col-sm">
-
-
                                                             <select id="priority"
                                                                     name="priority"
                                                                     required=""
                                                                     class="form-control s_website_form_input">
-                                                                <option value="0"
-                                                                        selected="selected">
-                                                                    Very
-                                                                    Low</option>
+                                                                <option disabled="disabled" selected="selected" value="">اختر اولوية لمشكلتك</option>
+                                                                <option value="0">
+                                                                    Very Low     -     منخفضة جدا
+                                                                </option>
                                                                 <option value="1">
-                                                                    Low</option>
+                                                                    Low     -     منخفضة
+                                                                </option>
                                                                 <option value="2">
-                                                                    Normal</option>
+                                                                    Normal     -     عادية
+                                                                </option>
                                                                 <option value="3">
-                                                                    High</option>
+                                                                    High     -     مرتفعة
+                                                                </option>
                                                             </select>
                                                         </div>
-                                                    </div><br/>
+                                                    </div>
+                                                    <br/>
                                                 </div>
                                                 <div class="form-group col-12 s_website_form_field s_website_form_custom s_website_form_required"
                                                      data-type="binary"
@@ -291,14 +316,17 @@
                                                                style="width: 200px"
                                                                for="contact6">
                                                             <span class="s_website_form_label_content">
-                                                                Attachment</span>
+                                                                Attachment
+                                                            </span>
                                                         </label>
                                                         <div class="col-sm">
                                                             <input type="file"
                                                                    name="ticket_attachment"
                                                                    multiple="true"/>
+                                                            <label>رفع ملف</label>
                                                         </div>
-                                                    </div><br/>
+                                                    </div>
+                                                    <br/>
                                                 </div>
                                                 <div class="form-group col-12 s_website_form_field s_website_form_dnone">
                                                     <div class="row s_col_no_resize s_col_no_bgcolor">
@@ -306,7 +334,8 @@
                                                                style="width: 200px"
                                                                for="contact7">
                                                             <span class="s_website_form_label_content">
-                                                                Email To</span>
+                                                                Email To
+                                                            </span>
                                                         </label>
                                                         <div class="col-sm">
                                                             <input id="contact7"
@@ -322,7 +351,8 @@
                                                          class="s_website_form_label"/>
                                                     <a href="#" role="button"
                                                        class="btn btn-primary btn-lg s_website_form_send">
-                                                        Submit</a>
+                                                        Submit
+                                                    </a>
                                                     <span id="s_website_form_result"></span>
                                                 </div>
                                             </div>
@@ -332,22 +362,23 @@
                             </div>
                             <div class="col-lg-4 m-1 mt-5 mt-lg-0">
                                 <ul class="list-unstyled  mb-0 pl-2">
-                                    <li class="mt-5">My Company</li>
+                                    <li class="mt-5">Modeem Organization</li>
                                     <li>
                                         <i class="fa fa-map-marker fa-fw mr-2"/>
-                                        <span class="o_force_ltr">3575 Demo
-                                            Buena
-                                            Vista Avenue</span>
+                                        <span class="o_force_ltr">Modeem
+                                        </span>
                                     </li>
                                     <li>
                                         <i class="fa fa-phone fa-fw mr-2"/>
-                                        <span class="o_force_ltr">+1 (650)
-                                            555-0111</span>
+                                        <span class="o_force_ltr">+1 05xxxxxxx
+                                            555-0111
+                                        </span>
                                     </li>
                                     <li>
                                         <i class="fa fa-1x fa-fw fa-envelope mr-2"/>
                                         <span>
-                                            info@yourcompany.example.com</span>
+                                            support@modeem.org.sa
+                                        </span>
                                     </li>
                                 </ul>
                             </div>

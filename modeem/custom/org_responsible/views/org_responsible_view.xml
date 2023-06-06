@@ -11,23 +11,32 @@
                                 attrs="{'invisible':[('state','!=','draft')]}"/>
                         <button name="reject" type="object" string="Reject" class="btn-danger"
                                 attrs="{'invisible':[('state','!=','draft')]}"/>
-                        <field name="state" widget="statusbar" states="draft,escalate,reject"/>
+                        <button name="set_to_draft" type="object" string="Set To Draft"
+                                attrs="{'invisible':[('state','=','draft')]}"/>
+                        <field name="state" widget="statusbar" states="draft,escalation,reject,done"/>
                     </header>
+                    <br/><br/>
+                    <div class="oe_title">
+                        <h1>
+                        <field name="ref" readonly="1"/>
+                        </h1>
+                    </div>
                     <br/>
                     <br/>
                     <br/>
                     <group>
                         <group>
-                            <field name="name"/>
-                            <field name="description"/>
-                            <field name="responsible_org"/>
-                            <field name="customer_name"/>
-                            <field name="customer_phone"/>
+                            <field name="name" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="description" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="organization" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="responsible_org" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="customer_name" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="customer_phone" attrs="{'readonly':[('state','!=','draft')]}"/>
                         </group>
                         <group>
-                            <field name="priority" widget="priority"/>
+                            <field name="priority" widget="priority" attrs="{'readonly':[('state','!=','draft')]}"/>
                             <field name="attachment" attrs="{'readonly':[('state','!=','draft')]}"/>
-                            <field name="customer_id"/>
+                            <field name="customer_id" attrs="{'readonly':[('state','!=','draft')]}"/>
                         </group>
                     </group>
                 </sheet>
@@ -53,7 +62,7 @@
     </record>
 
     <record id="org_responsible_action" model="ir.actions.act_window">
-        <field name="name">org_responsible_action_view</field>
+        <field name="name">Org Action View</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">org.responsible</field>
         <field name="view_mode">tree,form</field>

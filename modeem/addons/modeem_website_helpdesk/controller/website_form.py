@@ -39,18 +39,20 @@ class WebsiteFormInherit(WebsiteForm):
             data = self.extract_data(model_record, request.params)
             attachment_files = data.get('attachments')
             # print(attachment_files)
+            if not attachment_files:
+                raise ValidationError("Attachment is empty")
             for attachment in attachment_files:
                 t_attachment = attachment.read()
-                print("######################################")
             rec_val = {
                 'customer_name': kwargs.get('customer_name'),
-                'name': kwargs.get('subject'),
+                'name': kwargs.get('description'),
                 'description': kwargs.get('description'),
                 'customer_email': kwargs.get('email_from'),
                 'customer_phone': kwargs.get('phone'),
                 'priority': kwargs.get('priority'),
-                'attachment': base64.encodebytes(t_attachment)
+                'attachment': base64.encodebytes(t_attachment),
             }
+            # print(rec_val)
             # partner = request.env['res.partner'].sudo().search(
             #     [('name', '=', kwargs.get('customer_name')),
             #      ('customer_email', '=', kwargs.get('email_from'))], limit=1)
@@ -58,9 +60,8 @@ class WebsiteFormInherit(WebsiteForm):
             #     rec_val['customer_id'] = partner.id
             # else:
             #     rec_val['public_ticket'] = True
-
             ticket_id = request.env['org.responsible'].sudo().create(rec_val)
-            request.session['ticket_number'] = ticket_id.name
+            request.session['ticket_number'] = ticket_id.ref
             request.session['ticket_id'] = ticket_id.id
             model_record = request.env['ir.model'].sudo().search(
                 [('model', '=', model_name)])

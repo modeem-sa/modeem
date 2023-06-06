@@ -8,6 +8,7 @@
     "data": [
         "security/org_responsible_groups.xml",
         "security/ir.model.access.csv",
+        "data/ticket_org_sequence.xml",
         "views/org_responsible_view.xml",
     ],
 }

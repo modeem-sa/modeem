@@ -35,6 +35,7 @@ class TicketPortal(portal.CustomerPortal):
                 'help.ticket'].check_access_rights(
                 'read', raise_exception=False) else 0
             values['ticket_count'] = ticket_count
+            # print(f"This Is Printing VALUES !!!!!!!!!!!!{ticket_count}")  need this for Later
         return values
 
     # checking domain:
