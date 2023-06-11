@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modeem>
+    <data>
+        <record id="add_org_res_id" model="ir.ui.view">
+            <field name="name">Add Org Responsible ID</field>
+            <field name="model">help.ticket</field>
+            <field name="inherit_id" ref="modeem_website_helpdesk.view_helpdesk_form"/>
+            <field name="arch" type="xml">
+                <field name="name" position="before">
+                    <field name="team_id" />
+                </field>
+            </field>
+        </record>
+    </data>
+</modeem>

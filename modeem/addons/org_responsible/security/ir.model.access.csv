@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_org_responsible_admin,access.org.responsible,model_org_responsible,org_responsible.org_responsible_admin,1,1,0,1
+access_org_responsible_user,access.org.responsible,model_org_responsible,org_responsible.org_responsible_user,1,1,0,0
