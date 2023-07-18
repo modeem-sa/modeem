@@ -1,0 +1,53 @@
+// Search-bar Design in fullpage
+#search_bar_modal {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    input,select,textarea{
+        background-color: transparent;
+    }
+    .close{
+        box-shadow: none;
+        outline: none;
+    }
+    .form-control{
+        box-shadow: none !important;
+        border: 0;
+        border-radius: 0;
+        height: var(--input-height);
+        font-size: 20px;
+    }
+    .load-active-menu-selector{
+        max-width: 170px;
+    }
+    #searchPagesInput{
+        margin-left: 15px;
+    }
+    #searchPagesResults {
+        list-style: none;
+        padding-left: 0;
+    }
+    .auto-complete-result {
+        .search_list_content {
+            border-radius: var(--border-radius-md) !important;
+            border: 1px solid;
+            border-color: #dee2e6;
+            margin-bottom: 5px;
+
+            .autoComplete_highlighted{
+                padding: 0.75rem 1rem;
+                display: block;
+
+                b{
+                    color: var(--biz-theme-primary-color);
+                }
+            }
+            &.navigate_active{
+                border-color: var(--biz-theme-primary-color) !important;
+            }
+            &:hover {
+                border-color: var(--biz-theme-primary-color) !important;
+                cursor: pointer;
+            }
+        }
+    }
+}
+// search bar design end

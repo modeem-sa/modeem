@@ -1,0 +1,262 @@
+body.o_web_client {
+    .biz-custom-radio1 {
+        position: relative;
+        &::before {
+            position: absolute;
+            content: "";
+            display: inline-block;
+            outline: 0 !important;
+            border: 1px solid var(--biz-theme-primary-color) !important;
+            border-radius: 50% !important;
+            height: 14px;
+            width: 14px;
+        }
+    
+        &.active {
+            &::after {
+                position: absolute;
+                content: "";
+                font-family: 'fontawesome' !important;
+                color: var(--biz-theme-primary-text-color) !important;
+                outline: 0 !important;
+                border: 0 !important;
+                border-radius: 50% !important;
+                background-color: var(--biz-theme-primary-color) !important;
+                height: 8px;
+                width: 8px;
+                margin-top: 3px;
+                transform: none !important;
+                font-size: 10px;
+                margin-left: 3px;
+            }
+        }
+    }
+    
+    .biz-custom-radio2 {
+        position: relative;
+    
+        &::before {
+            position: absolute;
+            content: "";
+            display: inline-block;
+            outline: 0 !important;
+            border: 1px solid var(--biz-theme-primary-color) !important;
+            border-radius: 0% !important;
+            height: 14px;
+            width: 14px;
+    
+        }
+    
+        &.active {
+            &::after {
+                position: absolute;
+                content: "";
+                font-family: 'fontawesome' !important;
+                color: var(--biz-theme-primary-text-color) !important;
+                outline: 0 !important;
+                border: 0 !important;
+                border-radius: 0% !important;
+                background-color: var(--biz-theme-primary-color) !important;
+                height: 8px;
+                width: 8px;
+                margin-top: 3px;
+                transform: none !important;
+                font-size: 10px;
+                margin-left: 3px;
+            }
+        }
+    }
+    
+    .biz-custom-radio3 {
+        position: relative;
+    
+        &::before {
+            position: absolute;
+            content: "";
+            display: inline-block;
+            outline: 0 !important;
+            border: 3px solid var(--biz-theme-primary-color) !important;
+            border-radius: 50% !important;
+            height: 14px;
+            width: 14px;
+            background-color: var(--biz-theme-primary-color) !important;
+        }
+    
+        &.active {
+            &::after {
+                position: absolute;
+                content: "";
+                font-family: 'fontawesome' !important;
+                color: var(--biz-theme-primary-text-color) !important;
+                outline: 0 !important;
+                border: 0 !important;
+                border-radius: 50% !important;
+                background-color: var(--biz-theme-primary-text-color)  !important;
+                height: 6px;
+                width: 6px;
+                margin-top: 4px;
+                transform: none !important;
+                font-size: 10px;
+                margin-left: 4px;
+            }
+        }
+    }
+    
+    .biz-custom-radio4 {
+        position: relative;
+    
+        &::before {
+            position: absolute;
+            content: "\f2dd";
+            font-family: 'fontawesome' !important;
+            display: inline-block;
+            outline: 0 !important;
+            border-radius: 50% !important;
+            background-color: transparent !important;
+            height: 14px;
+            width: 14px;
+            transform: none !important;
+            color: var(--biz-theme-primary-color) !important;
+            font-size: 16px;
+        }
+    
+        &.active {
+            &::after {
+                position: absolute;
+                content: "";
+                font-family: 'fontawesome' !important;
+                color: var(--biz-theme-primary-text-color) !important;
+                outline: 0 !important;
+                border: 0 !important;
+                border-radius: 50% !important;
+                background-color: var(--biz-theme-primary-color)  !important;
+                height: 8px;
+                width: 8px;
+                margin-top: 8px;
+                transform: none !important;
+                font-size: 10px;
+                margin-left: 4px;
+            }
+        }
+    }
+}
+
+body.o_web_client.radio_style_1 {
+    input[type="radio"]{
+        display: inline-block;
+        outline: 0 !important;
+        border: 1px solid var(--biz-theme-primary-color) !important;
+        border-radius: 50% !important;
+        background-color: transparent !important;
+        width: 14px;
+        height: 14px;
+        line-height: 14px;
+        
+        &:checked{
+            position: relative;
+            &::after{
+                content: "" !important;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                display: inline-block;
+                background-color: var(--biz-theme-primary-color) !important;
+            }
+        }
+    }
+}
+
+body.o_web_client.radio_style_2 {
+    input[type="radio"]{
+        display: inline-block;
+        outline: 0 !important;
+        border: 1px solid var(--biz-theme-primary-color) !important;
+        border-radius: 0 !important;
+        background-color: transparent !important;
+        width: 14px;
+        height: 14px;
+        line-height: 14px;
+        
+        &:checked{
+            position: relative;
+            &::after{
+                content: "" !important;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 8px;
+                height: 8px;
+                border-radius: 0;
+                display: inline-block;
+                background-color: var(--biz-theme-primary-color) !important;
+            }
+        }
+    }
+}
+
+body.o_web_client.radio_style_3 {
+    input[type="radio"]{
+        display: inline-block;
+        outline: 0 !important;
+        width: 14px;
+        height: 14px;
+        line-height: 14px;
+        border-radius: 50% !important;
+        border: 1px solid var(--biz-theme-primary-color) !important;
+        background-color: var(--biz-theme-primary-color) !important;
+        &:checked{
+            position: relative;
+            &::after{
+                content: "" !important;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                display: inline-block;
+                background-color: #fff !important;
+            }
+        }
+    }
+}
+
+body.o_web_client.radio_style_4 {
+    input[type="radio"]{
+        position: relative;
+        border: none;
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        font-family: 'fontawesome' !important;
+        font-size: 16px;
+        color: var(--biz-theme-primary-color) !important;
+        background-image: unset;
+
+        &::before{
+            content: "\f2dd" !important;
+            position: absolute;
+        }
+        &:checked{
+            &::after{
+                content: "" !important;
+                display: inline-block;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                border-radius: 50%;
+                width: 8px;
+                height: 8px;
+                background-color: var(--biz-theme-primary-color) !important;
+            }
+        }
+    }
+}

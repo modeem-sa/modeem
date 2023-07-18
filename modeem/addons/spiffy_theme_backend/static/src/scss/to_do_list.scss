@@ -1,0 +1,350 @@
+@mixin color-pallet{
+    &.pallet_1{
+        background-color: rgba(#ffe66e, 0.6);
+        border-color: rgba(#ffe66e, 0.6) !important;
+        color: #121212;
+        --pallet-color: #ffe66e;
+    }
+    &.pallet_2{
+        background-color: rgba(#a1ef9b, 0.6);
+        border-color: rgba(#a1ef9b, 0.6) !important;
+        color: #121212;
+        --pallet-color: #a1ef9b;
+    }
+    &.pallet_3{
+        background-color: rgba(#ffafdf, 0.6);
+        border-color: rgba(#ffafdf, 0.6) !important;
+        color: #121212;
+        --pallet-color: #ffafdf;
+    }
+    &.pallet_4{
+        background-color: rgba(#d7afff, 0.6);
+        border-color: rgba(#d7afff, 0.6) !important;
+        color: #121212;
+        --pallet-color: #d7afff;
+    }
+    &.pallet_5{
+        background-color: rgba(#9edfff, 0.6);
+        border-color: rgba(#9edfff, 0.6) !important;
+        color: #121212;
+        --pallet-color: #9edfff;
+    }
+    &.pallet_6{
+        background-color: rgba(#e0e0e0, 0.6);
+        border-color: rgba(#e0e0e0, 0.6) !important;
+        color: #121212;
+        --pallet-color: #e0e0e0;
+    }
+    &.pallet_7{
+        background-color: rgba(#767676, 0.6);
+        border-color: rgba(#767676, 0.6) !important;
+        color: #ffffff;
+        --pallet-color: #767676;
+    }
+    /* &.pallet_8{
+        background-color: rgba(#cc8631, 0.6);
+        border-color: rgba(#cc8631, 0.6) !important;
+        color: #ffffff;
+        --pallet-color: #cc8631;
+    }
+    &.pallet_9{
+        background-color: rgba(#0097a7, 0.6);
+        border-color: rgba(#0097a7, 0.6) !important;
+        color: #ffffff;
+        --pallet-color: #0097a7;
+    } */
+}
+
+body.o_web_client{
+    .navbar_to_do_list_data {
+        position: fixed;
+        z-index: 1041;
+        background-color: var(--biz-theme-body-color) !important;
+        color: var(--biz-theme-body-text-color) !important;
+        box-shadow: var(--box-shadow-common);
+        right: -100%;
+        top: 0;
+        height: 100%;
+        transition: 0.2s;
+        display: none;
+        
+        &.visible{
+            right: 0 !important;
+            display: block;
+        }
+
+        @include media-breakpoint-up(md){
+            width: 500px;
+            border-top-left-radius: var(--border-radius-lg);
+            border-bottom-left-radius: var(--border-radius-lg);
+        }
+        @include media-breakpoint-down(md){
+            width: 100%;
+        }
+
+        .to-do-list-sidebar{
+            #close_to_do_sidebar {
+                img {
+                    max-width: 16px;
+                }
+            }
+            .to-do-sidebar-heading{
+                height: 50px;
+
+                .to-do-title{
+                    font-size: 20px;
+                }
+            }
+            .to-do-sidebar-body{
+                height: calc(100% - 50px) !important;
+                .backdrop:after{
+                    content: '';
+                    background-color: #00000050;
+                    // display: block;
+                    z-index: 0;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    @media (min-width: 768px) {
+                        border-bottom-left-radius: var(--border-radius-lg);
+                    }
+                }
+                .add-new-list-btn{
+                    display: flex;
+                    border-radius: 50px !important;
+                    position: fixed;
+                    right: 20px;
+                    bottom: 20px;
+                    padding: 12px !important;
+                    z-index: 1;
+
+                    &.close{
+                        .ri{
+                            transform: rotate(45deg);
+                        }
+                        .text{
+                            display: block !important;
+                        }
+                    }
+
+                    .ri{
+                        display: block;
+                        transition: 0.3s;
+                        font-size: 20px;
+                    }
+                }
+                .add-list{
+                    transform: translateY(0);
+                    transition: 0.2s;
+                    display: block !important;
+                    opacity: 1;
+                    visibility: visible;
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    z-index: 1;
+                    
+                    .note-input{
+                        font-weight: 400;
+                        background-color: transparent;
+
+                        b{
+                            font-weight: 600;
+                        }
+                    }
+                    .add-list-outer{
+                        .note-colors-option{
+                            label{
+                                @include color-pallet;
+
+                                input[name="noteColorPallet"]:checked{
+                                    & + span{
+                                        font-family: 'Fontawesome';
+                                        border: 2px solid #12121250;
+                                        display: block;
+                                        text-align: center;
+                                        
+                                        &::after{
+                                            content: "\f00c";
+                                            color: #12121250;
+                                        }
+                                    }
+                                }
+
+                                .pallet_detail{
+                                    height: 30px;
+                                    display: block;
+                                }
+                            }
+                        }
+                        .note-title{
+                            .note-title-input{
+                                font-size: 1.625rem !important;
+                                font-weight: 500 !important;
+                                &::placeholder{
+                                    color: #62677450;
+                                    font-size: 14px;
+                                }
+                            }
+                        }
+                        .note-description{
+                            .note-description-input{
+                                &:empty:not(:focus):before {
+                                    content: attr(data-text);
+                                    color: #62677450;
+                                    font-size: 14px;
+                                }
+                                min-height: 100px;
+                                font-weight: 400;
+                                background-color: transparent;
+                                word-break: break-all;
+                                b{ font-weight: 600; }
+                                
+                            }
+                        }
+                    }
+                    &.d-none{
+                        transform: translateY(-100%);
+                        opacity: 0;
+                        visibility: hidden;
+                    }
+
+                    #text_bold:checked{
+                        & + span{
+                            background-color: var(--biz-theme-primary-color);
+                        }
+                    }
+                }
+
+                .users-to-do-list{
+                    padding: 10px;
+                    overflow: auto;
+                    height: calc(100% - 10px);
+                    // height: 100%;
+                    
+                    .note_content{
+                        border: 0;
+                        @include color-pallet;
+                        font-weight: 400;
+
+                        b{ font-weight: 600; }
+                        *{ color: inherit; }
+
+                        &:not(:first-child){
+                            margin-top: 10px;
+                        }
+                        .note_outer_content{
+                            min-height: 90px;
+                            .date-and-edit{
+                                color: inherit;
+                                // position: absolute;
+                                right: 0;
+                                font-size: 11px;
+                                .note-date span, .note-options *{
+                                    line-height: 10px !important;
+                                    color: inherit;
+                                }
+                                .note-options{
+                                    .dropdown-menu{
+                                        min-width: 130px;
+                                        .nav-item{
+                                            .ri{
+                                                width: 20px;
+                                                height: 20px;
+                                                line-height: 20px;
+                                            }
+                                        }
+                                    }
+                                    .dropdown-toggle{
+                                        border: 0 !important;
+                                        padding: 0 !important;
+                                        &::after{
+                                            display: none;
+                                        }
+                                    }
+                                }
+                            }
+                            .note-details{
+                                .note-title{
+                                    h2{
+                                        font-size: 1.625rem !important;
+                                        font-weight: 500 !important;
+                                        word-wrap: break-word;
+                                    }
+                                }
+                                .note-description{
+                                    .description-main{
+                                        word-wrap: break-word;
+                                    }
+                                }
+                            }
+                        }
+
+                        @media (min-width: 768px) {
+                            &:hover{
+                                .date-and-edit{
+                                    .note-date{
+                                        display: none !important;
+                                    }
+                                    .note-options{
+                                        display: block !important;
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+
+    &.dark_mode{
+        .to-do-list-sidebar{
+            #close_to_do_sidebar {
+                img {
+                    filter: brightness(0) invert(1);
+                }
+            }
+            .to-do-sidebar-body{
+                .add-list{
+                    .add-list-outer{
+                        .note-title{
+                            .note-title-input{
+                                color: #f2f2f2;
+                                &::placeholder{
+                                    color: #f2f2f260;
+                                }
+                            }
+                        }
+                        .note-description{
+                            .note-description-input{
+                                color: #f2f2f2;
+                                &:empty:not(:focus):before {
+                                    color: #f2f2f260;
+                                }
+                            }
+                        }
+                    }
+                }
+                .users-to-do-list{
+                    .note_content{
+                        border: 0;
+                        border-top-width: 5px;
+                        border-style: solid;
+                        background-color: var(--biz-theme-secondary-color) !important;
+                        color: var(--biz-theme-secondary-text-color) !important;
+                        
+                        .note_outer_content{
+                            .date-and-edit{
+                                color: var(--pallet-color) !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

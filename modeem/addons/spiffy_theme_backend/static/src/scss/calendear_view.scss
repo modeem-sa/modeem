@@ -1,0 +1,110 @@
+body.o_web_client {
+    .o_calendar_sidebar_container {
+        padding-right: 0 !important;
+
+        .o_calendar_filter .o_calendar_filter_item .o_cw_filter_input_bg.o_beside_avatar {
+            border: 0 !important;
+        }
+    }
+
+    .o_calendar_sidebar_container,.o_calendar_mini,.ui-datepicker {
+        background-color: var(--biz-theme-body-color) !important;
+        color: var(--biz-theme-body-text-color) !important;
+
+        a {
+            color: var(--biz-theme-body-text-color) !important;
+        }
+    }
+
+    .o_calendar_sidebar_container{
+        .ui-datepicker{
+            td.ui-datepicker-current-day a{
+                background-color: var(--biz-theme-primary-rgba);
+                color: var(--biz-theme-primary-text-color) !important;
+            }
+        }
+    }
+
+    .o_cw_filter_color_7 .o_cw_filter_input_bg{
+        background: var(--biz-theme-primary-rgba);
+
+        .fa{
+            line-height: inherit;
+        }
+    }
+
+    .fc {
+        .fc-row{
+            .fc-content-skeleton, .fc-mirror-skeleton {
+                table, td{
+                    background: unset !important;
+                }
+            }
+        }
+    }
+
+    .o_calendar_view {
+        .o_calendar_widget {
+            .fc-dayGridMonth-view{
+                .fc-bg{
+                    .fc-today{
+                        background: transparent;
+                    }
+                }
+            }
+            .fc-timeGridWeek-view, .fc-timeGridDay-view {
+                .fc-today {
+                    span {
+                        color: var(--biz-theme-primary-text-color) !important;
+                    }
+                    border-radius: var(--border-radius-lg);
+                    background: var(--biz-theme-primary-color) !important;
+                    color: var(--biz-theme-primary-text-color);
+                }
+            }
+        }
+        .fc-view {
+            background-color: var(--biz-theme-body-color) !important;
+            color: var(--biz-theme-body-text-color) !important;
+        }
+        .fc-day-grid {
+            background-color: transparent !important;
+        }
+        table {
+            td {
+                span {
+                    color: var(--biz-theme-body-text-color) !important;
+                }
+            }
+        }
+    }
+}
+
+body.o_web_client.dark_mode {
+    .o_calendar_view {
+        table {
+            td {
+                border-right: transparent !important;
+                border-left: transparent !important;
+            }
+        }
+
+        .o_calendar_widget {
+            .fc-widget-header {
+                border-color: transparent !important;
+                border-bottom-color: #818181!important;
+
+            }
+
+            .fc-timeGridWeek-view {
+                .fc-axis.fc-time {
+                    border-top-color: transparent !important;
+                }
+
+                .fc-slats tr:first-child td.fc-widget-content:last-child {
+                    box-shadow: inset 0 1px 0 #545454 !important;
+                }
+            }
+        }
+    }
+}

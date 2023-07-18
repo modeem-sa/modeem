@@ -1,0 +1,95 @@
+body.o_web_client {
+    .multi_tab_section {
+        .multi_tab_div {
+            padding: 3px 10px;
+            box-shadow: var(--box-shadow-common) !important;
+            background: var(--biz-theme-secondary-color) !important;
+            border-radius: var(--border-radius-lg) !important;
+            height: 35px;
+            line-height: 30px;
+            min-width: 170px;
+            .remove_tab {
+                color: #cdcdcd;
+                cursor: pointer;
+            }
+            a{
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                padding-right: 10px;
+
+                span{
+                    pointer-events: none;
+                }
+            }
+            &.tab_active {
+                a, .remove_tab {
+                    color: #fff !important;
+                }
+                background: var(--biz-theme-primary-rgba) !important;
+                border-color: var(--biz-theme-primary-rgba) !important;
+                color: #fff !important;
+            }
+        }
+        position: absolute;
+        width: min-intrinsic !important;
+        width: -webkit-fill-available;
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 8px;
+        padding-bottom: 8px;
+
+        &::-webkit-scrollbar {
+            display: block !important;
+            height: 2px;
+        }
+       
+    }
+    &.top_menu_vertical {
+        &.multi_tab_enabled{
+            .o_action_manager {
+                margin-top: 60px;
+            }
+        }
+        .multi_tab_section {
+            // padding: 0px 5rem 0px 27rem;
+            top: 8px;
+            @media (max-width: 767.98px){
+                left: 15px;
+                right: 15px;
+            }
+            @media (min-width: 768px) {
+                left: calc(var(--vertical-menu-width) + 3rem);
+                right: 5rem;
+            }
+            
+        }
+        &:not(.pinned) {
+            .multi_tab_section {
+                left: 8rem;
+                // padding: 0px 5rem 0px 8rem;
+            }
+        }
+    }
+    &.top_menu_horizontal {
+        &.multi_tab_enabled{
+            .o_action_manager {
+                margin-top: 60px;
+            }
+        }
+        .multi_tab_section {
+            top: calc(var(--horizontal-menu-height) + 8px);
+            @media (max-width: 767.98px){
+                left: 15px;
+                right: 15px;
+            }
+            @media (min-width: 768px) {
+                left: 5rem;
+                right: 5rem;
+            }
+            
+            // padding: 0px 5rem 0px 5rem;
+        }
+    }
+}

@@ -1,0 +1,93 @@
+body.o_web_client{
+    &.separator_style_1{
+        .o_horizontal_separator{
+            box-shadow: none !important;
+            background-color: transparent !important;
+            color: var(--biz-theme-primary-color) !important;
+            position: relative;
+            padding: 10px 0 !important;
+            &:before {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 1px;
+                height: 3px;
+                z-index: 2;
+                width: 55px;
+                background-color: var(--biz-theme-primary-color);
+            }
+            &:after {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 1px;
+                height: 1px;
+                width: 95%;
+                background-color: #d8d8d8;
+            }
+        }
+    }
+
+    &.separator_style_2{
+        .o_horizontal_separator{
+            box-shadow: none !important;
+            background-color: transparent !important;
+            color: var(--biz-theme-primary-color) !important;
+            position: relative;
+            padding: 10px 0 !important;
+            padding-left: 10px !important;
+            &:before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 50%;
+                height: 90%;
+                transform: translateY(-50%);
+                z-index: 2;
+                width: 3px;
+                background-color: var(--biz-theme-primary-color);
+            }
+        }
+    }
+
+    &.separator_style_3{
+        .o_horizontal_separator{
+            box-shadow: none !important;
+            border-bottom: 1px solid;
+            border-color: var(--biz-theme-primary-color);
+            width: 90%; 
+        }
+    }
+    
+    &.separator_style_4{
+        .o_horizontal_separator{
+            box-shadow: none !important;
+            background-color: transparent !important;
+            color: var(--biz-theme-primary-color) !important;
+            position: relative;
+            margin-right: 50px !important;
+            padding: 10px 0 !important;
+            &::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                width: -webkit-fill-available;
+                transform: translateY(-50%);
+                z-index: 2;
+                height: 3px;
+                background-color: var(--biz-theme-primary-color);
+                margin-left: 15px;
+            }
+        }
+    }
+
+    .config-sidebar-tab-content{
+        #general_settings{
+            .separator-styles-row{
+                img{
+                    max-height: 40px;
+                }
+            }
+        }
+    }
+}

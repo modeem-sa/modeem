@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modeem>
+	<data>
+		<record id="bizople_pwa_shortcuts_tree_view" model="ir.ui.view">
+			<field name="name">pwa.shortcuts.tree</field>
+			<field name="model">pwa.shortcuts</field>
+			<field name="type">tree</field>
+			<field name="priority" eval="8" />
+			<field name="arch" type="xml">
+				<tree string="PWA shortcuts">
+					<field name="name" />
+                    <field name="url"/>
+				</tree>
+			</field>
+		</record>
+
+		<record id="bizople_pwa_shortcuts_form_view" model="ir.ui.view">
+			<field name="name">pwa.shortcuts.form</field>
+			<field name="model">pwa.shortcuts</field>
+			<field name="type">form</field>
+			<field name="priority" eval="8" />
+			<field name="arch" type="xml">
+				<form string="PWA shortcuts">
+					<sheet>
+						<group colspan="4">
+							<field name="name"/>
+                            <field name="description"/>
+                            <field name="short_name"/>
+                            <field name="url"/>
+                            <field name="image_192_shortcut" widget="image"/>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="act_open_pwa_shortcuts_view">
+			<field name="name">PWA Shortcuts</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">pwa.shortcuts</field>
+			 <field name="view_mode">tree,form</field>
+		</record>
+
+		<record model="ir.actions.act_window.view" id="act_open_pwa_shortcuts_view_form">
+			<field name="act_window_id" ref="act_open_pwa_shortcuts_view" />
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="bizople_pwa_shortcuts_form_view" />
+		</record>
+
+		<record model="ir.actions.act_window.view" id="act_open_pwa_shortcuts_view_tree">
+			<field name="act_window_id" ref="act_open_pwa_shortcuts_view" />
+			<field name="sequence" eval="10" />
+			 <field name="view_mode">tree</field>
+			<field name="view_id" ref="bizople_pwa_shortcuts_tree_view" />
+		</record>
+	</data>
+</modeem>

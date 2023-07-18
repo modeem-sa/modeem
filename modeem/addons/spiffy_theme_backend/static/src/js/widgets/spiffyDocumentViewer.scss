@@ -1,0 +1,79 @@
+#myModal{
+	top:36px;
+	background-color: rgba(0, 0, 0, 0.7);
+	position: fixed;
+    left: 0;
+    z-index: 1057;
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    outline: 0;
+    .modal-dialog{
+    	padding:0 !important;
+    	height: calc(100% - 100px);
+    	pointer-events: all;
+    	
+	    .attch-modal-content {
+	    	color: var(--biz-theme-body-text-color) !important;
+	    	.attch-viewer-header{
+			    position: fixed;
+			    top: 0;
+			    left: 0;
+	    		background-color: rgba(0, 0, 0, 0.75) !important;
+	    		color: #ced4da !important;
+			    width: 100% !important;
+			    display: flex;
+			    align-items: center;
+			    justify-content: space-between;
+			    .image_filename_div{
+
+			    }
+			    .download_clsoe_div{
+			    	display: flex;
+			    	a{
+			    		color: #ced4da !important;
+			    	}
+			    }
+	    	}
+	    	.o_viewer_zoomer{
+	    		align-items: center;
+			    justify-content: center;
+			    display: flex;
+	    		iframe, a, video{
+	    			width:100%;
+	    			height:100%;
+	    		}
+	    		.o_viewer_img{
+	    			background-color: black;
+    			    max-height: 100%;
+	    		}
+	    	}
+	    	.o_viewer_toolbar{
+	    		justify-content: center;
+    			bottom: 0;
+    			a{
+	    			background-color: var(--AttachmentViewer_toolbarButton-background-color, #343a40);
+	    			color: #fff;
+    			}
+	    	}
+	    	.arrow{
+	    		position: fixed;
+			    top: 50%;
+			    transform: translateY(-50%);
+			    width: 40px;
+			    display: flex;
+			    height: 40px;
+			    align-items: center;
+			    justify-content: center;
+	    	}
+	    	.move_previous{
+	    		left: 15px !important;
+	    	}
+	    	.move_next{
+	    		right: 15px !important;
+	    	}
+	    }
+    }
+}

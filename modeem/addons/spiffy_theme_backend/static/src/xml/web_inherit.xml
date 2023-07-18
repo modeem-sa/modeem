@@ -1,0 +1,89 @@
+<templates id="template" xml:space="preserve">
+	<!-- View Refresh -->
+	<t t-name="spiffy_theme_backend.view_refresher" t-inherit="web.Pager" t-inherit-mode="extension" owl="1">
+		<xpath expr="//span[hasclass('o_pager_counter')]" position="before">
+			<span class="btn-group">
+				<button type="button" class="reload_view btn btn-primary ri ri-refresh-line" t-on-click.stop="() => this.navigate(0)" />
+			</span>
+		</xpath>
+	</t>
+
+	<t t-name="FavoriteApps">
+		<div class="app-box">
+			<a role="menuitem" t-attf-href="#menu_id=#{app_id}" class="d-block o_app text-center text-center"
+				t-att-data-menu-id="app_id" t-att-data-menu-xmlid="app_xmlid" t-att-data-action-id="app_actionid" t-att-title="app_name">
+				<div class="app-image">
+					<t t-if="use_icon">
+						<t t-if="icon_class_name">
+							<span t-attf-class="ri #{icon_class_name}"/>
+						</t>
+						<t t-elif="icon_img">
+							<img class='img img-fluid o_image_64_max' t-attf-src='/web/image/ir.ui.menu/#{app_id}/icon_img' />
+						</t>
+						<t t-else="">
+							<t t-if="web_icon_ext == 'false'">
+								<img class='img img-fluid o_image_64_max' src='/spiffy_theme_backend/static/description/bizople-icon.png' />
+							</t>
+							<t t-elif="web_icon_ext === 'svg'">
+								<img class='img img-fluid o_image_64_max' t-attf-src='#{web_svg_src}' />
+							</t>
+							<t t-else="">
+								<img class='img img-fluid o_image_64_max' t-attf-src='data:image/png;base64,#{web_icon_data}' />
+							</t>
+						</t>
+					</t>
+					<t t-else="">
+						<t t-if="icon_img">
+							<img class='img img-fluid o_image_64_max' t-attf-src='/web/image/ir.ui.menu/#{app_id}/icon_img' />
+						</t>
+						<t t-else="">
+							<t t-if="web_icon_ext == 'false'">
+								<img class='img img-fluid o_image_64_max' src='/spiffy_theme_backend/static/description/bizople-icon.png' />
+							</t>
+							<t t-elif="web_icon_ext === 'svg'">
+								<img class='img img-fluid o_image_64_max' t-attf-src='#{web_svg_src}' />
+							</t>
+							<t t-else="">
+								<img class='img img-fluid o_image_64_max' t-attf-src='data:image/png;base64,#{web_icon_data}' />
+							</t>
+						</t>
+					</t>
+				</div>
+			</a>
+		</div>
+	</t>
+
+	<t t-name="SearchedApps">
+		<div class="app-box mb16">
+			<a role="menuitem" t-attf-href="#menu_id=#{app_id}" class="d-block o_app text-center text-center"
+				t-att-data-menu-id="app_id" t-att-data-menu-xmlid="app_xmlid" t-att-data-action-id="app_actionid">
+				<div class="app-image mb8">
+				</div>
+				<div class="app-name">
+					<t t-esc="app_name" />
+				</div>
+			</a>
+			<div class="fav_app_select d-none">
+				<span class="ri ri-check-line"/>
+			</div>
+		</div>
+	</t>
+
+	<t t-name="Searchedlang">
+		<div class="dispalay_lang">
+			<div role="button" t-att-lang="lang_code" class="d-block biz_lang_btn">
+				<div t-attf-class="lang-name #{lang_code == active_lang ? 'active':''}">
+					<t t-esc="lang_name" />
+				</div>
+			</div>
+		</div>
+	</t>
+
+    <t t-name="MblStatusbarDropdownBtns">
+        <div class="dropdown">
+            <button class="mbl_statusbar_dropdown_btn btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                <span class="ri ri-list-settings-line"/>
+            </button>
+        </div>
+    </t>
+</templates>

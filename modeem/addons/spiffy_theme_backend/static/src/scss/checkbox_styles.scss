@@ -1,0 +1,233 @@
+body.o_web_client {
+    #theme_radio_style, #theme_checkbox_style {
+        .custom-control-label {
+            .row {
+                width: 250px;
+                height: 20px;
+            }
+        }
+    }
+
+    .biz-custom-checkbox1 {
+        position: relative;
+
+        &::before {
+            position: absolute;
+            content: "";
+            display: inline-block;
+            outline: 0 !important;
+            border: 1px solid var(--biz-theme-primary-color) !important;
+            border-radius: 50% !important;
+            background-color: var(--biz-theme-primary-color) !important;
+            height: 14px;
+            width: 14px;
+            transform: none !important;
+        }
+
+        &.active {
+            &::after {
+                position: absolute;
+                content: "\f00c";
+                font-family: 'fontawesome' !important;
+                color: var(--biz-theme-primary-text-color) !important;
+                outline: 0 !important;
+                border: 0 !important;
+                background-color: unset !important;
+                height: 14px;
+                width: 14px;
+                margin-top: -1px;
+                transform: none !important;
+                font-size: 10px;
+                margin-left: 2px;
+            }
+        }
+    }
+
+    .biz-custom-checkbox2 {
+        position: relative;
+
+        &::before {
+            position: absolute;
+            content: "";
+            display: inline-block;
+            outline: 0 !important;
+            border: 1px solid var(--biz-theme-primary-color) !important;
+            border-radius: 0 !important;
+            background-color: var(--biz-theme-primary-color) !important;
+            height: 14px;
+            width: 14px;
+            transform: none !important;
+        }
+
+        &.active {
+            &::after {
+                position: absolute;
+                content: "\f00c";
+                font-family: 'fontawesome' !important;
+                color: var(--biz-theme-primary-text-color) !important;
+                outline: 0 !important;
+                border: 0 !important;
+                background-color: unset !important;
+                height: 14px;
+                width: 14px;
+                margin-top: -1px;
+                transform: none !important;
+                font-size: 10px;
+                margin-left: 2px;
+            }
+        }
+    }
+
+    .biz-custom-checkbox3 {
+        position: relative;
+
+        &::before {
+            position: absolute;
+            content: "";
+            display: inline-block;
+            outline: 0 !important;
+            border: 2px solid var(--biz-theme-primary-color) !important;
+            border-radius: 0 !important;
+            background-color: transparent !important;
+            height: 14px;
+            width: 14px;
+            transform: none !important;
+        }
+
+        &.active {
+            &::after {
+                position: absolute;
+                content: "\f00c";
+                font-family: 'fontawesome' !important;
+                color: var(--biz-theme-primary-color) !important;
+                outline: 0 !important;
+                border: 0 !important;
+                background-color: unset !important;
+                height: 14px;
+                width: 14px;
+                margin-top: -1px;
+                transform: none !important;
+                font-size: 10px;
+                margin-left: 2px;
+            }
+        }
+    }
+
+    .biz-custom-checkbox4 {
+        position: relative;
+
+        &::before {
+            position: absolute;
+            content: "";
+            display: inline-block;
+            outline: 0 !important;
+            border: 2px solid var(--biz-theme-primary-color) !important;
+            border-radius: 50% !important;
+            background-color: transparent !important;
+            height: 14px;
+            width: 14px;
+            transform: none !important;
+        }
+
+        &.active {
+            &::after {
+                position: absolute;
+                content: "\f00c";
+                font-family: 'fontawesome' !important;
+                color: var(--biz-theme-primary-color) !important;
+                outline: 0 !important;
+                border: 0 !important;
+                background-color: unset !important;
+                height: 10px;
+                width: 10px;
+                margin-top: -1px;
+                transform: none !important;
+                font-size: 10px;
+                margin-left: 2px;
+            }
+        }
+    }
+}
+
+body.o_web_client{
+    .o-checkbox .form-check-input[type="checkbox"]{
+        height: 1rem;
+        width: 1rem;
+        background-image: unset;
+        background-color: transparent !important;
+        outline: 0 !important;
+    }
+}
+
+body.o_web_client.checkbox_style_1 {
+    .o-checkbox .form-check-input[type="checkbox"]{
+        border: 1px solid var(--biz-theme-primary-color) !important;
+        border-radius: 50% !important;
+        
+        &:checked{
+            background-image: url("/spiffy_theme_backend/static/src/image/checked.png") !important;
+            background-size: 0.8rem;
+            background-color: var(--biz-theme-primary-color) !important;
+            display: inline-block;
+        }
+    }
+}
+
+body.o_web_client.checkbox_style_2 {
+
+    .o-checkbox .form-check-input[type="checkbox"]{
+        border: 1px solid var(--biz-theme-primary-color) !important;
+        border-radius: 0 !important;
+        
+        &:checked{
+            background-image: url("/spiffy_theme_backend/static/src/image/checked.png") !important;
+            background-size: 0.8rem;
+            background-color: var(--biz-theme-primary-color) !important;
+            display: inline-block;
+        }
+    }
+}
+
+body.o_web_client.checkbox_style_3 {
+    .o-checkbox .form-check-input[type="checkbox"]{
+        border: 2px solid var(--biz-theme-primary-color) !important;
+        border-radius: 0 !important;
+        
+        &:checked{
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &::after{
+                position: absolute;
+                content: "\f00c" !important;
+                font-family: 'FontAwesome' !important;
+                font-size: 0.8rem;
+                display: inline-block;
+                color: var(--biz-theme-primary-color) !important
+            }
+        }
+    }
+}
+
+body.o_web_client.checkbox_style_4 {
+    .o-checkbox .form-check-input[type="checkbox"]{
+        border: 1px solid var(--biz-theme-primary-color) !important;
+        border-radius: 50% !important;
+        
+        &:checked{
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            &::after{
+                position: absolute;
+                content: "\f00c" !important;
+                font-family: 'FontAwesome' !important;
+                font-size: 0.8rem;
+                display: inline-block;
+                color: var(--biz-theme-primary-color) !important;
+            }
+        }
+    }
+}

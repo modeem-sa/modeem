@@ -1,0 +1,131 @@
+body.o_web_client {
+    .o_MobileMessagingNavbar_tab.o-active{
+        color: var(--biz-theme-primary-color);
+    }
+    .o_MobileMessagingNavbar{
+        background-color: var(--biz-theme-body-color) !important;
+    }
+    .o_ThreadViewTopbar{
+        background-color: var(--biz-theme-body-color) !important;
+    }
+    .o_MessageActionList{
+        background-color: var(--biz-theme-body-color) !important;
+        color: var(--biz-theme-body-text-color) !important;
+
+        .o_MessageActionView{
+            &:hover{
+                background-color: var(--biz-theme-secondary-color) !important;
+                color: var(--biz-theme-secondary-text-color) !important;
+            }
+        }
+    }
+    .o_DiscussContainer {
+        .o_ThreadPreview{
+            background-color: var(--biz-theme-secondary-color) !important;
+        }
+
+        .o_Discuss{
+            &.o-mobile{
+                background-color: var(--biz-theme-body-color) !important;
+                border-color: var(--biz-theme-secondary-color) !important;
+
+                .o_DiscussMobileMailboxSelection{
+                    padding: 0 15px;
+                    gap: 5px;
+                    .o_DiscussMobileMailboxSelection_button{
+                        box-shadow: none !important;
+                    }
+                }
+            }
+        }
+        .o_Discuss_content,
+        .o_MessageList_empty,
+        .o_Message,
+        .o_MessageList,
+        .o_MessageList_separatorLabel, .o_MessageActionList {
+            background-color: var(--biz-theme-body-color) !important;
+            color: var(--biz-theme-body-text-color) !important;
+            .o_ThreadViewTopbar_threadName, .o_ThreadViewTopbar_markAllReadButton{
+                border: none !important;
+            }
+            .o_ThreadViewTopbar{
+                color: var(--biz-theme-body-text-color) !important;
+            }
+            .o_MessageActionView:hover{
+                background-color: var(--biz-theme-secondary-color) !important;
+            }
+        }
+
+        .o_DiscussSidebar {
+            background-color: var(--biz-theme-body-color) !important;
+            color: var(--biz-theme-body-text-color) !important;
+            .o_DiscussSidebarCategory_title, .o_DiscussSidebarCategory_command, .o_DiscussSidebarCategoryItem_command {
+                border: none;
+            }
+        }
+
+        .o_DiscussSidebarItem:hover {
+            background-color: var(--biz-theme-body-color) !important;
+            color: var(--biz-theme-body-text-color) !important;
+        }
+
+        .o_DiscussSidebarItem_activeIndicator.o-item-active {
+            background-color: var(--biz-theme-primary-color) !important;
+        }
+
+        .o_Composer {
+            background-color: var(--biz-theme-body-color) !important;
+            color: var(--biz-theme-body-text-color) !important;
+
+            .o_Composer_coreMain {
+
+                .o_ComposerTextInput {
+                    background-color: var(--biz-theme-secondary-color) !important;
+                    border-color: #414141 !important;
+                    textarea {
+                        background-color: var(--biz-theme-secondary-color) !important;
+                        color: var(--biz-theme-secondary-text-color) !important;
+                    }
+                }
+
+                .o_Composer_buttons {
+                    .o_Composer_button:not(.btn-primary){
+                        background-color: transparent !important;
+                        color: var(--biz-theme-secondary-text-color) !important;
+                        box-shadow: none !important;
+                        outline: none !important;
+                    }
+                    .o_Composer_toolButtons {
+                        background-color: var(--biz-theme-secondary-color) !important;
+                        color: var(--biz-theme-secondary-text-color) !important;
+                    }
+
+                    .o_Composer_actionButtons {
+                        .btn {
+                            border-bottom-left-radius: 0 !important;
+                            border-top-left-radius: 0 !important;
+                        }
+                    }
+                }
+            }
+        }
+        .o_ThreadViewTopbar_threadName.o-threadNameEditable, .o_ThreadViewTopbar_threadDescription.o-threadDescriptionEditable {
+            background-color: var(--biz-theme-secondary-color) !important;
+        }
+        .o_ThreadViewTopbar_threadDescription {
+            border-color: #414141 !important;
+        }
+        .o_DiscussSidebarCategoryItem .o_DiscussSidebarCategoryItem_item .o_DiscussSidebarCategoryItem_command {
+            padding: 0 !important;
+        } 
+    }
+    &.dark_mode{
+        .o_DiscussSidebarMailbox.o-active, .o_DiscussSidebarCategoryItem.o-active, .o_DiscussSidebarMailbox:hover, .o_DiscussSidebarCategoryItem:hover, .o_ChannelInvitationForm_selectablePartner:hover{
+            background-color: var(--biz-theme-secondary-color) !important;
+        }
+        .o_DiscussSidebarMailbox, .o_DiscussSidebarCategoryItem{
+            background-color: var(--biz-theme-body-color) !important;
+            color: var(--biz-theme-body-text-color) !important;
+        }
+    }
+}

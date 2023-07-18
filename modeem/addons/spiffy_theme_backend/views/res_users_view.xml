@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modeem>
+    <record model="ir.ui.view" id="spiffy_configuration_res_user_view">
+        <field name="name">res.users.form.view.inherit</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form_simple_modif"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='preferences_page']" position="after">
+                <page string="Spiffy Configuration" name="spiffy_config">
+                    <group>
+                        <field name="enable_todo_list"/>
+                    </group>
+                    <!-- <group>
+                        <field name="todo_list_ids" invisible="0">
+                            <tree>
+                                <field name="sequence"/>
+                                <field name="name"/>
+                                <field name="description"/>
+                                <field name="note_color_pallet"/>
+                            </tree>
+                        </field>
+                    </group> -->
+                </page>
+            </xpath>
+        </field>
+    </record>
+</modeem>

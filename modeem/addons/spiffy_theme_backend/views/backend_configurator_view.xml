@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modeem>
+	<record id="backend_config_tree_view" model="ir.ui.view">
+		<field name="name">backend.config.tree.view</field>
+		<field name="model">backend.config</field>
+		<field name="type">tree</field>
+		<field name="arch" type="xml">
+			<tree string="Backend Config">
+				<field name="light_primary_bg_color"/>
+				<field name="light_primary_text_color"/>
+				<field name="light_bg_image"/>
+				<field name="separator"/>
+				<field name="tab"/>
+				<field name="checkbox"/>
+				<field name="radio"/>
+			</tree>
+		</field>
+	</record>
+
+	<record id="backend_config_form_view" model="ir.ui.view">
+		<field name="name">backend.config.form.view</field>
+		<field name="model">backend.config</field>
+		<field name="type">form</field>
+		<field name="arch" type="xml">
+			<form string="Backend Config">
+				<sheet>
+                    <group colspan="4">
+						<field name="use_custom_colors"/>
+						<field name="tree_form_split_view"/>
+						<field name="color_pallet"/>
+						<field name="use_custom_drawer_color"/>
+						<field name="drawer_color_pallet"/>
+						<field name="loader_style"/>
+						<field name="font_family"/>
+						<field name="light_primary_bg_color"/>
+						<field name="appdrawer_custom_bg_color"/>
+						<field name="appdrawer_custom_text_color"/>
+						<field name="light_primary_text_color"/>
+						<field name="light_bg_image"/>
+						<field name="separator"/>
+						<field name="tab"/>
+						<field name="checkbox"/>
+						<field name="radio"/>
+						<field name="chatter_position"/>
+						<field name="top_menu_position"/>
+						<field name="theme_style"/>
+						<field name="attachment_in_tree_view"/>
+						<field name="font_size"/>
+						<field name="list_view_density"/>
+						<field name="list_view_sticky_header"/>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<record id="action_backend_config" model="ir.actions.act_window">
+        <field name="name">Backend Config</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">backend.config</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</modeem>

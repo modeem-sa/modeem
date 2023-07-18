@@ -1,0 +1,114 @@
+body.o_web_client.popup_style_1{
+    .o_dialog_container.modal-open {
+        .modal{
+            .modal-content{
+                opacity: 0;
+                animation-name: fadeIn;
+                animation-duration: 0.2s;
+                animation-timing-function: linear;
+                animation-fill-mode: forwards;
+            }
+            @-webkit-keyframes fadeIn {
+                0% {
+                  opacity:0;
+                }
+                100% {
+                  opacity:1;
+                }
+            }
+        }
+    }
+}
+
+body.o_web_client.popup_style_2{
+    .o_dialog_container.modal-open {
+        .modal{
+            .modal-content{
+                animation-name: flip;
+                animation-duration: 0.2s;
+                animation-timing-function: linear;
+                transform-origin: 50% 50%;
+            }
+            @-webkit-keyframes flip {
+                0%{
+                    -webkit-transform: perspective(400px) rotateX(-20deg);
+                    -webkit-animation-timing-function: ease-out;
+                }
+                100%{
+                    -webkit-transform: perspective(400px) rotateX(0deg);
+                    -webkit-animation-timing-function: ease-in;
+                }
+            }
+        }
+    }
+}
+
+body.o_web_client.popup_style_3{
+    .o_dialog_container.modal-open {
+        .modal{
+            .modal-content{
+                animation-name: bounceIn;
+                animation-duration: 0.2s;
+                animation-timing-function: linear;
+            }
+            @-webkit-keyframes bounceIn{
+                0%{
+                    transform: scale(0.3) translate3d(0,0,0) !important;
+                }
+                50%{
+                    transform: scale(1.5) !important;
+                }
+                80%{
+                    transform: scale(0.89) !important;
+                }
+                100%{
+                    transform: scale(1) translate3d(0,0,0) !important;
+                }
+            }
+        }
+    }
+}
+
+body.o_web_client.popup_style_4{
+    .o_dialog_container:not(.modal-open) {
+        .modal:not(.show){
+            .modal-content{
+                transform: scale(1.2);
+            }
+        }
+    }
+    .o_dialog_container.modal-open {
+        .modal{
+            .modal-content{
+                -webkit-transition-property: -webkit-transform;
+                -webkit-transition-duration: 0.2s;
+                -moz-transition-property: -moz-transform;
+                -moz-transition-duration: 0.2s;
+                -webkit-animation-name: shrink;
+                -webkit-animation-duration: 0.2s;
+                -webkit-animation-iteration-count: forwards;
+                -webkit-animation-timing-function: linear;
+                -moz-animation-name: shrink;
+                -moz-animation-duration: 0.2s;
+                -moz-animation-iteration-count: forwards;
+                -moz-animation-timing-function: linear;
+                
+                transition-property: -moz-transform;
+                transition-duration: 0.2s;
+                animation-name: shrink;
+                animation-duration: 0.2s;
+                animation-iteration-count: forwards;
+                animation-timing-function: linear;
+                
+            }
+            @-webkit-keyframes shrink{
+                from {
+                    transform: scale(1.2);
+                }
+                to {
+                    transform: scale(1);
+                }
+            }
+        }
+    }
+}

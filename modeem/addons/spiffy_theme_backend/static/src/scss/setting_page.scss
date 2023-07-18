@@ -1,0 +1,151 @@
+body.o_web_client {
+    .o_setting_search {
+        input {
+            border: 0 !important;
+        }
+        .searchIcon i {
+            vertical-align: bottom;
+        }
+    }
+    .o_setting_container {
+        .text-muted{
+            color: rgba(73, 80, 87, 0.76) !important;
+        }
+        .settings_tab {
+            border-right: 1px solid #dee2e6;
+            background-color: transparent !important;
+            .tab.selected {
+                color: var(--biz-theme-primary-text-color) !important;
+                background-color: var(--biz-theme-primary-color) !important;
+                box-shadow: unset !important;
+            }
+            .tab {
+                align-items: center;
+                color: var(--biz-theme-body-text-color) !important;
+                margin-right: 15px;
+                padding: 0 16px;
+                border-radius: var(--border-radius-lg) !important;
+                margin-bottom: 5px;
+                transition: 0.3s;
+                @media (max-width: 767.98px) {
+                    line-height: 40px;
+                }
+                .icon {
+                    background-size: cover !important;
+                    height: 25px;
+                    width: 25px !important;
+                    border-radius: var(--border-radius-sm);
+                }
+                &:hover:not(.selected) {
+                    background-color: var(--primary-rgba) !important;
+                }
+            }
+        }
+        .settings {
+            color: var(--biz-theme-body-text-color) !important;
+            background-color: var(--biz-theme-body-color) !important;
+
+            // .o_setting_right_pane {
+            //     border-left: 1px solid #dee2e6 !important;
+            // }
+
+            .highlighter {
+                background: rgba($color: var(--warning), $alpha: 0.5) !important;
+            }
+
+            .app_settings_block {
+                h2 {
+                    background-color: transparent !important;
+                    color: var(--biz-theme-primary-color) !important;
+                    position: relative;
+                    padding: 10px 0 !important;
+                    margin-left: 22px !important;
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        bottom: 1px;
+                        height: 3px;
+                        z-index: 2;
+                        width: 55px;
+                        background-color: #707070;
+                    }
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        bottom: 2px;
+                        height: 1px;
+                        width: 95%;
+                        background-color: #d8d8d8;
+                    }
+                }
+
+                .o_setting_right_pane a {
+                    color: var(--biz-theme-primary-color);
+                }
+
+                .o_user_emails.o_input {
+                    margin: 0 !important;
+                }
+
+                .o_web_settings_invite {
+                    border-top-left-radius: 0 !important;
+                    right: 5px;
+                    position: relative;
+                    border-bottom-left-radius: 0 !important;
+                }
+
+                .o_field_widget {
+                    // padding-left: 10px !important;
+                    @include media-breakpoint-down(md){
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    @include media-breakpoint-down(md){
+        .o_setting_container {
+            .settings_tab {
+                flex-direction: row;
+                margin-left: 15px;
+                &::-webkit-scrollbar {
+                    height: 1px;
+                    width: 1px;
+                }
+            }
+            .settings {
+                .o_settings_container {
+                    margin: 0;
+                }
+            }
+            flex-direction: column;
+        }
+    }
+}
+
+body.o_web_client.dark_mode {
+    .o_setting_container {
+        .text-muted{
+            color: rgba(189, 190, 191, 0.76) !important;
+        }
+        .settings {
+            .app_settings_block {
+                h2, .settingSearchHeader {
+                    background-color: rgba($color: #ffffff, $alpha: 0.2);
+                }
+                h2 {
+                    &:before {
+                        background-color: #c4c4c4;
+                    }
+                    &:after {
+                        background-color: #3d3d3d;
+                    }
+                }
+            }
+
+        }
+    }
+}

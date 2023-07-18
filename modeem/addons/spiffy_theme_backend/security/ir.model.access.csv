@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_favorite_apps,access_favorite_apps,model_favorite_apps,base.group_user,1,0,0,0
+access_bookmark_link,access_bookmark_link,model_bookmark_link,base.group_user,1,0,0,0
+access_backend_config,access_backend_config,model_backend_config,base.group_user,1,1,1,0
+access_pwa_shortcuts,access_pwa_shortcuts,model_pwa_shortcuts,,1,1,1,1
+access_biz_multi_tab,access_biz_multi_tab,model_biz_multi_tab,base.group_user,1,0,0,0
+access_todo_list,access_todo_list,model_todo_list,,1,1,1,1

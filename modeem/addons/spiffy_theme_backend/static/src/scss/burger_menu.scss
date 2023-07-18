@@ -1,0 +1,94 @@
+.o_burger_menu {
+    .o_burger_menu_topbar {
+        .dropdown-toggle {
+            .fa {
+                &:before{
+                    font-family: 'remixicon' !important;
+                    content: "\ea6e";
+                    vertical-align: inherit;
+                }
+            }
+            &.active {
+                .fa {
+                    &:before{
+                        content: "\ea4e" !important;
+                    }
+                }
+                background: transparent !important;
+                color: var(--biz-theme-primary-text-color) !important;
+            }
+        }
+        background-color: rgba(255, 255, 255, 0.05);
+        border-radius: var(--border-radius-lg);
+        margin-bottom: 1rem;
+    }
+    .o_burger_menu_content {
+        .o_user_menu_mobile {
+            .dropdown-item {
+                padding: 7px 0 7px 10px !important;
+                color: var(--biz-theme-primary-text-color) !important;
+                min-height: unset;
+                font-size: inherit !important;
+                line-height: unset;
+            }
+            .dropdown-divider{
+                border-color: #dee2e6 !important;
+                margin-left: 10px !important;
+                margin-right: 10px !important;
+            }
+            // background-color: var(--biz-theme-body-color);
+            margin-top: 0 !important;
+            border-radius: var(--border-radius-lg);
+            padding: 10px;
+        }
+        ul.ps-0.mb-0 {
+            li.py-3.fs-4 {
+                height: 35px !important;
+                line-height: 35px !important;
+                min-height: 35px;
+                font-size: inherit;
+                background-color: rgba(255, 255, 255, 0.05) !important;
+                color: var(--biz-theme-primary-text-color) !important;
+                border-radius: var(--border-radius-lg);
+                padding: 0 !important;
+                padding-left: 16px !important;
+                margin-top: 10px;
+            }
+            li.ps-0 {
+                .py-3.bg-transparent {
+                    height: 35px !important;
+                    line-height: 35px !important;
+                    min-height: 35px;
+                    font-size: inherit;
+                    background-color: rgba(255, 255, 255, 0.05) !important;
+                    color: var(--biz-theme-primary-text-color) !important;
+                    border-radius: var(--border-radius-lg);
+                    padding: 0 !important;
+                    padding-left: 16px !important;
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                }
+                ul.ps-0 {
+                    li.py-3 {
+                        padding: 7px 0 7px 0 !important;
+                        color: var(--biz-theme-primary-text-color) !important;
+                        min-height: unset;
+                    }
+                }
+            }
+        }
+        ul {
+            background-color: transparent !important;
+            box-shadow: none !important;
+        }
+        background-color: transparent !important;
+        .o_burger_menu_companies{
+            @include media-breakpoint-down(lg){
+                display: none !important;
+            }
+        }
+    }
+    background-color: var(--biz-theme-primary-color);
+    padding: 10px;
+    max-width: 300px;
+}

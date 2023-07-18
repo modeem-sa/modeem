@@ -1,0 +1,81 @@
+body.tree_form_split_view {
+    .o_action_manager.tree_form_split > .o_view_controller.split-screen-tree-viewer > .o_content {
+        display: flex;
+        > .o_list_view {
+            flex-shrink: 0;
+            position: sticky;
+            top: 0;
+            left: 0;
+            overflow: auto;
+            min-width: 35%;
+            max-width: 55%;
+            height: fit-content;
+        }
+
+        > .o_view_controller {
+            position: static !important;
+            min-width: 35%;
+            flex-grow: 1;
+            overflow: auto;
+            padding-right: 10px;
+
+            &.tree-form-viewer{
+                > .o_content{
+                    margin-bottom: 1rem;
+                    .o_form_view{
+                        .o_form_sheet_bg{
+                            .o_form_sheet{
+                                min-width: 100%;
+                                max-width: 100%;
+                                .oe_button_box{
+                                    .oe_stat_button{
+                                        width: 25%;
+                                    }
+                                }
+                            }
+                        }
+                        .o_group{
+                            .o_group_col_6{
+                                width: auto;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .close_form_view {
+        position: absolute;
+        top: 0;
+        right: 10px;
+        text-align: center;
+        cursor: pointer;
+        border-radius: var(--border-radius-md);
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        background-color: var(--biz-theme-primary-color);
+        color: var(--biz-theme-primary-text-color);
+        z-index: 1;
+    }
+}
+
+.split_view_separator {
+    cursor: col-resize;
+    width: 6px;
+    margin: 0 10px;
+    background: #b8b8b847 url(/spiffy_theme_backend/static/src/image/pallet_1.png) no-repeat center !important;
+    background-size: 9px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+    flex-shrink: 0;
+    height: auto;
+    position: sticky;
+    top: 0;
+    opacity: 1;
+}

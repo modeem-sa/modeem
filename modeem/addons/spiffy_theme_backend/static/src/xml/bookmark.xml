@@ -1,0 +1,23 @@
+<templates id="template" xml:space="preserve">
+	<t t-name="BookmarkOptions">
+		<div class="bookmark_options py-2 px-3 d-flex flex-column shadow" t-att-bookmark_id="bookmark_id">
+			<a class="rename_bookmark d-block me-0 px-0 py-1">Rename</a>
+			<a class="remove_bookmark d-block me-0 px-0 py-1">Remove</a>
+		</div>
+	</t>
+
+	<t t-name="BookmarkRename">
+		<div class="bookmark_rename_section px-3 py-2 shadow" t-att-bookmark_id="bookmark_id">
+			<p class="">Rename</p>
+			<div class="form-group">
+				<input type="text" class="form-control" name="bookmark_rename" t-att-value="bookmark_name"
+					id="bookmark_rename" />
+			</div>
+			<div class="dropdown-divider"></div>
+			<div class="d-flex">
+				<a class="btn btn-primary bookmark_rename">Rename</a>
+				<a class="btn btn-secondary me-0 bookmark_rename_cancel">Cancel</a>
+			</div>
+		</div>
+	</t>
+</templates>

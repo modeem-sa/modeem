@@ -1,0 +1,63 @@
+body.o_web_client {
+    .o_content{
+        .o_pivot {
+            padding: 30px 0 30px 0px !important;
+
+            .table-bordered {
+                background-color: var(--biz-theme-body-color) !important;
+
+                thead {
+                    tr {
+                        background-color: var(--biz-theme-body-color) !important;
+                        height: 50px;
+
+                        th {
+                            background-color: var(--biz-theme-body-color) !important;
+                            color: var(--biz-theme-body-text-color) !important;
+                            font-weight: 600 !important;
+                            padding-left: 25px;
+                            padding-right: 25px;
+
+                            &:focus-within {
+                                background-color: unset !important;
+                            }
+                        }
+                    }
+                }
+
+                tbody {
+                    th {
+                        background-color: var(--biz-theme-body-color) !important;
+                        color: var(--biz-theme-body-text-color) !important;
+                    }
+
+                    tr {
+                        background-color: var(--biz-theme-body-color) !important;
+                        height: 50px;
+
+                        td {
+                            padding-left: 25px;
+                            padding-right: 25px;
+                        }
+
+                        td.o_pivot_cell_value {
+                            background-color: var(--biz-theme-body-color) !important;
+                            color: var(--biz-theme-body-text-color) !important;
+
+                            .o_value {
+                                text-align: center;
+                            }
+                        }
+
+                        &:hover {
+                             background-color: var(--biz-theme-secondary-color) !important;
+                        }
+                    }
+                }
+            }
+            @include media-breakpoint-down(md){
+                padding: 30px 15px !important;
+            }
+        }
+    }
+}

@@ -1,0 +1,420 @@
+.oe_website_login_container{
+    .input-group-append{
+        a{
+            background-color: theme-color('secondary') !important;
+            border-color: theme-color('secondary') !important;
+            color: #fff !important;
+        }
+    }
+    .oe_login_form{
+        .oe_login_buttons{
+            .btn-primary{
+                background-color: theme-color('primary') !important;
+                border-color: theme-color('primary') !important;
+                color: #fff !important;
+            }
+        }
+    }
+    .oe_login_form, .oe_signup_form,.oe_reset_password_form{
+        .form-group{
+            display: block !important;
+        }
+        .login-icon{
+            display: none !important;
+        }
+    }
+    .oe_reset_password_form{
+        .oe_login_buttons{
+            margin-top: 15px;
+        }
+    }
+}
+
+body.backend-login-page{
+    &[data-debug-mode="1"]{
+        .login_style_4{
+            .border-top{
+                margin-top: 32px !important;
+                top: 34px !important;
+            }
+        }
+    }
+    .login-page-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .card-body{
+        &.pallet_1 {
+            .btn-primary,.btn-secondary{
+                background-color:#1ea8e7;
+                border-color: #1ea8e7;
+                color: #ffffff;
+            }
+            .oe_login_form, .oe_signup_form,.oe_reset_password_form{
+                color: #1ea8e7;
+            }
+        }
+        &.pallet_2 {
+            .btn-primary,.btn-secondary{
+                background-color: #75ab38;
+                border-color: #75ab38;
+                color: #ffffff;
+            }
+            .oe_login_form, .oe_signup_form,.oe_reset_password_form{
+                color: #75ab38;
+            }
+        }
+    
+        &.pallet_3 {
+            .btn-primary,.btn-secondary{
+                background-color: #ed6789;
+                border-color: #ed6789;
+                color: #ffffff;
+            }
+            .oe_login_form, .oe_signup_form,.oe_reset_password_form{
+                color: #ed6789;
+            }
+        }
+    
+        &.pallet_4 {
+            .btn-primary,.btn-secondary{
+                background-color: #a772cb;
+                border-color: #a772cb;
+                color: #ffffff;
+            }
+            .oe_login_form, .oe_signup_form,.oe_reset_password_form{
+                color: #a772cb;
+            }
+        }
+    
+        &.pallet_5 {
+            .btn-primary,.btn-secondary{
+                background-color: #eb5858;
+                border-color: #eb5858;
+                color: #ffffff;
+            }
+            .oe_login_form, .oe_signup_form,.oe_reset_password_form{
+                color: #eb5858;
+            }
+        }
+    
+        &.pallet_6 {
+            .btn-primary,.btn-secondary{
+                background-color: #8c6f46;
+                border-color: #8c6f46;
+                color: #ffffff;
+            }
+            .oe_login_form, .oe_signup_form,.oe_reset_password_form{
+                color: #8c6f46;
+            }
+        }
+    
+        &.pallet_7 {
+            .btn-primary,.btn-secondary{
+                background-color: #007a5a;
+                border-color: #007a5a;
+                color: #ffffff;
+            }
+            .oe_login_form, .oe_signup_form,.oe_reset_password_form{
+                color: #007a5a;
+            }
+        }
+    
+        &.pallet_8 {
+            .btn-primary,.btn-secondary{
+                background-color: #cc8631;
+                border-color: #cc8631;
+                color: #ffffff;
+            }
+            .oe_login_form, .oe_signup_form,.oe_reset_password_form{
+                color: #cc8631;
+            }
+        }
+    
+        &.pallet_9 {
+            .btn-primary,.btn-secondary{
+                background-color: #0097a7;
+                border-color: #0097a7;
+                color: #ffffff;
+            }
+            .oe_login_form, .oe_signup_form,.oe_reset_password_form{
+                color: #0097a7;
+            }
+        }
+        .border-bottom{
+            border: none !important;
+        }
+        .border-top{
+            border: none !important;
+        }
+        a:not(.btn),a[href="/web/login?"]{
+            color: #495057;
+            font-size: 12px !important;
+        }
+        .oe_login_form,.oe_signup_form,.oe_reset_password_form{
+            .form-group{
+                margin-bottom: 1.5rem !important;
+                border: 1px solid #9cabc170;
+                border-radius: 8px;
+                .input-group{
+                    input{
+                        border-top-right-radius: 0 !important;
+                        border-bottom-right-radius:0 !important;
+                        padding-left: 12px !important;
+                    }
+                    a{
+                        i{
+                            margin-left: 4px;
+                        }
+                    }
+                }
+                .input_content{
+                    border: 1px solid #9cabc170;
+                    border-radius: 8px;
+                    .fa{
+                        position: absolute;
+                    }
+                }
+                .login-icon{
+                    width: 20px;
+                    height: 20px;
+                    text-align: center;
+                }
+                input{
+                    height: 45px;
+                    font-weight: 500;
+                    font-size: 16px;
+                    outline: none !important;
+                    box-shadow: none !important;
+                    border: none;
+                    border-top-right-radius: 8px !important;
+                    border-bottom-right-radius: 8px !important;
+                }
+                label{
+                    display: none;
+                }
+            }
+            .clearfix,.oe_login_buttons  {
+                padding: 0 !important;
+                .btn-block, .btn-primary {
+                    height: 45px;
+                    font-weight: 500;
+                    font-size: 16px;
+                    border-radius: 8px;
+                }
+            }
+        }
+        &.login_style_1{
+            background-color: transparent !important;
+            .oe_login_form,.oe_signup_form,.oe_reset_password_form{
+                background-color: white;
+                padding: 45px;
+                border-radius: 8px;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+                .form-group{
+                    .input-group{
+                        a{
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            border-top-right-radius: 8px !important;
+                            border-bottom-right-radius:8px !important;
+                        }
+                        input{
+                            border-top-right-radius: 0px !important;
+                            border-bottom-right-radius:0px !important;
+                        }
+                    }
+                    input,.input_content{
+                        border-radius: 8px !important;
+                    }
+                }
+                .clearfix,.oe_login_buttons{
+                    a,.btn:not(.btn-primary){
+                        color: #495057 !important;
+                        font-size: 12px !important;
+                        font-weight: 400 !important;
+                    }
+                }
+            }
+        }
+        &.login_style_2{
+            background-color: white !important;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            .border-top{
+                margin-top: 0 !important;
+                a{
+                    color: #495057 !important;
+                }
+            }
+            .oe_login_form,.oe_signup_form,.oe_reset_password_form{
+                background-color: white;
+                padding:0 45px;
+                .form-group{
+                    background-color: #f7f7f7 !important;
+                    .input-group{
+                        a{
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            border-top-right-radius: 0px !important;
+                            border-bottom-right-radius:0px !important;
+                        }
+                    }
+                    input,.input_content{
+                        border-radius: 0px;
+                        background-color: #f7f7f7 !important;
+                        border: none !important;
+                    }
+                }
+                .clearfix,.oe_login_buttons  {
+                    .btn-block {
+                        border-radius: 0px;
+                    }
+                    a,.btn:not(.btn-primary){
+                        color: #495057 !important;
+                        font-size: 12px !important;
+                        font-weight: 400 !important;
+                    }
+                }
+            }
+        }
+        &.login_style_3{
+            background-color: transparent !important;
+            .border-top {
+                margin: 0 !important;
+            }
+           
+            .oe_login_form,.oe_signup_form,.oe_reset_password_form {
+                background-color: transparent;
+                padding: 0 45px;
+                border-radius: 4px;
+
+                .form-group {
+                    background-color: #ffffff !important;
+                    .input-group {
+                        a {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            border-top-right-radius: 4px !important;
+                            border-bottom-right-radius: 4px !important;
+                            color: #fff !important;
+                        }
+                    }
+                    label{
+                        color: #fff;
+                    }
+
+                    .input_content {
+                        background-color: #fff;
+                        border-radius: 4px;
+                    }
+
+                    input {
+                        border-radius: 4px;
+                    }
+                }
+            }
+
+            .clearfix,.oe_login_buttons {
+                padding: 0 !important;
+                a:not([href="/web/login?"]),.btn:not(.btn-primary){
+                    color: inherit !important;
+                    font-size: 12px !important;
+                    font-weight: 400 !important;
+                }
+            }
+        }
+        &.login_style_4{
+            background-color: transparent !important;
+            .border-top{
+                position: relative;
+                top: 15px;
+                z-index: -1;
+            }
+            .oe_login_form,.oe_signup_form,.oe_reset_password_form{
+                background-color: white;
+                padding: 45px;
+                border-radius: 8px;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+                position: relative;
+                .form-group{
+                    .input-group{
+                        border-bottom: 1px solid #000;
+                        input{
+                            border-top-right-radius: 0 !important;
+                            border-bottom-right-radius:0 !important;
+                            border: none !important;
+                            padding-left: 0 !important;
+                            padding-right: 0 !important;
+                        }
+                        a{
+                            background-color: transparent !important;
+                            color: #000 !important;
+                            border: none !important;
+                            height: 30px;  
+                        }
+                    }
+                    .input_content{
+                        background-color: transparent !important;
+                        border: none !important;
+                        border-radius: 0 !important;
+                        border-bottom: 1px solid #000 !important;
+                    }
+                    input{
+                        height: 30px !important;
+                        font-size: 14px !important;
+                        border-radius: 0px !important;
+                        background-color: transparent !important;
+                        border: none !important;
+                    }
+                }
+                .clearfix,.oe_login_buttons  {
+                    position: absolute;
+                    width: calc(100% - 90px);
+                    left: 50%;
+                    transform: translateX(-50%);
+                    padding: 0 !important;
+                    top: calc(100% - 20px);
+                    .btn-primary {
+                        height: 40px !important;
+                        font-size: 14px !important;
+                        border-radius: 25px !important;
+                    }
+                    .btn-block{
+                        height: fit-content !important;
+                    }
+                    a:not([href="/web/login?"]),.btn:not(.btn-primary){
+                        color: inherit !important;
+                        font-size: 12px !important;
+                        font-weight: 400 !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.oe_reset_password_form {
+    .clearfix>div {
+        justify-content: center !important;
+    }
+}
+
+.o_database_list {
+    max-width: 500px !important;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    position: absolute;
+    left: 50%;
+    width: 100%;
+    max-height: 80vh;
+    background-color: transparent !important;
+}

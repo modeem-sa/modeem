@@ -1,0 +1,212 @@
+@mixin form-chatter-designs{
+    .o_action_manager {
+        .o_view_controller.o_form_view {
+            .o_content {
+                display: block;
+                height: 100%;
+
+                .o_form_sheet_bg {
+                    .o_form_statusbar {
+                        margin: 0;
+                    }
+                    width: 100%;
+                    padding: 0;
+                }
+            }
+            .o_FormRenderer_chatterContainer {
+                min-height: 100%;
+                width: 100%;
+                // margin-left: 15px;
+                margin: 0;
+                padding-bottom: 1rem !important;
+                flex-basis: 100%;
+
+                scrollbar-width: none; // hide scrollbar in firefox
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+
+                &.o_Chatter {
+                    height: 100%;
+                }
+                .o_Chatter_scrollPanel {
+                    scrollbar-width: none; // hide scrollbar in firefox
+                    &::-webkit-scrollbar {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+    }
+    // check this in repsonsive
+    .o_form_view {
+        .o_FormRenderer_chatterContainer {
+            border: 0;
+            max-width: 100% !important;
+            padding: 0 !important;
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+body.o_web_client {
+    .o_Message{
+        background-color: transparent;
+    }
+    .o_Attachment{
+        &.o-has-card-details{
+            color: #121212;
+        }
+    }
+    .o_FormRenderer_chatterContainer{
+        .o_ChatterContainer{
+            .o_ChatterTopbar_actions{
+                *{
+                    border: 0px !important;
+                }
+                .btn{
+                    padding: 0.6rem 1rem !important;
+                    background-color: transparent !important;
+                    border: none !important;
+                    color:var(--biz-theme-primary-color) !important;
+                }
+            }
+        }
+    }
+    &.chatter_bottom {
+        @include form-chatter-designs;
+        .o_view_controller.o_form_view{
+            flex-direction: column !important;
+            overflow: auto;
+            .o_form_view_container{
+                width:100% !important;
+            }
+        }
+    }
+    &.top_menu_vertical{
+        @media (max-width: 1550px) {
+            &.chatter_right {
+                @include form-chatter-designs;
+            }
+        }
+        @media (min-width: 1551px){
+            .o_action_manager{
+                .o_view_controller.o_form_view{
+                    .o_FormRenderer_chatterContainer{
+                        .o_ChatterTopbar_actions{
+                            flex-wrap: wrap;
+                            & > div{
+                                flex-wrap: wrap;
+                            }
+                        }
+                        &.o-aside{
+                            flex-shrink: unset !important;
+                        }
+                    }
+                }
+            }
+        }
+        &.pinned{
+            @media (max-width: 1800px){
+                .o_action_manager{
+                    .o_view_controller.o_form_view{
+                        flex-direction: column !important;
+                        overflow: auto;
+                        .o_form_view_container{
+                            width: 100%
+                        }
+                        .o_FormRenderer_chatterContainer{
+                            width: 100%
+                        }
+                    }
+                }
+                
+            }
+        }
+        &:not(.pinned){
+            @media (max-width: 1550px){
+                .o_action_manager{
+                    .o_view_controller.o_form_view{
+                        flex-direction: column !important;
+                        overflow: auto;
+                        .o_form_view_container{
+                            width: 100%
+                        }
+                        .o_FormRenderer_chatterContainer{
+                            width: 100%
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+  
+    &.top_menu_horizontal{
+        @include media-breakpoint-down(lg) {
+            &.chatter_right {
+                @include form-chatter-designs;
+                .o_FormRenderer_chatterContainer{
+                    margin-top: 15px !important;
+                }
+            }
+        }
+        @media (max-width: 1800px){
+            .o_action_manager{
+                .o_view_controller.o_form_view{
+                    flex-direction: column !important;
+                    overflow: auto;
+                    .o_form_view_container{
+                        width: 100%
+                    }
+                    .o_FormRenderer_chatterContainer{
+                        width: 100%
+                    }
+                }
+            }
+            
+        }
+    }
+    &.tree_form_split_view{
+        .o_view_controller.tree-form-viewer {
+            > .o_content > .o_form_view {
+                display: block;
+                height: 100%;
+
+                .o_form_sheet_bg {
+                    .o_form_statusbar {
+                        margin: 0;
+                    }
+                    width: 100%;
+                    padding: 0;
+                }
+
+                .o_FormRenderer_chatterContainer {
+                    min-height: 100%;
+                    width: 100%;
+                    // margin-left: 15px;
+                    margin: 0;
+                    padding-bottom: 1rem;
+                    flex-basis: 100%;
+                    padding-left: 1rem;
+                    scrollbar-width: none; // hide scrollbar in firefox
+                    &::-webkit-scrollbar {
+                        display: none;
+                    }
+
+                    .o_Chatter {
+                        height: 100%;
+                    }
+
+                    .o_Chatter_scrollPanel {
+                        scrollbar-width: none; // hide scrollbar in firefox
+                        &::-webkit-scrollbar {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    } 
+}

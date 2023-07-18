@@ -1,0 +1,66 @@
+body.o_web_client {
+    .bootstrap-datetimepicker-widget {
+        .datepicker-months, .datepicker-years, .datepicker-decades{
+            td{
+                &:hover{
+                    color: var(--biz-theme-secondary-text-color) !important;
+                }
+                span{
+                    &:hover{
+                        color: #1d1d1d !important;                            
+                    }
+                }
+            }
+        }
+        table {
+            & thead tr:first-child th {
+                background-color: var(--biz-theme-primary-color) !important;
+                color: var(--biz-theme-primary-text-color) !important;
+            }
+
+            & td {
+                color: var(--biz-theme-secondary-text-color);
+                &:hover{
+                    color: #1d1d1d;
+                }
+                &.active,
+                &.active:hover {
+                    background-color: var(--biz-theme-primary-color) !important;
+                    color: var(--biz-theme-primary-text-color) !important;
+                }
+                & span.active {
+                    background-color: var(--biz-theme-primary-color) !important;
+                    color: var(--biz-theme-primary-text-color) !important;
+                    &:hover {
+                        color: var(--biz-theme-primary-text-color) !important;
+                    }
+                }
+            }
+        }
+    }
+
+    &.dark_mode{
+        .daterangepicker.show-calendar {
+            --daterangepicker-border: 1px solid rgba(0, 0, 0, 0.15);
+            --daterangepicker-border-radius: 0.25rem;
+            --daterangepicker-bg: var(--biz-theme-body-color);
+            --daterangepicker-color: var(--biz-theme-body-text-color);
+            --daterangepicker__table-bg: transparent;
+            --daterangepicker__thead-bg: var(--biz-theme-body-color);
+            --daterangepicker__cell-border-color: var(--biz-theme-body-color);
+            --daterangepicker__cell-bg--hover: var(--biz-theme-body-color);
+            --daterangepicker__select-bg: var(--biz-theme-body-color);
+            --daterangepicker__select-border-color: var(--biz-theme-body-color);
+            --daterangepicker__select-color: var(--biz-theme-body-text-color);
+            border: var(--daterangepicker-border);
+            border-radius: var(--daterangepicker-border-radius);
+            background-color: var(--daterangepicker-bg);
+            box-shadow: var(--daterangepicker-box-shadow);
+            font-family: inherit;
+        
+            &:after{
+                border-bottom-color: #1d1d1d;
+            }
+        }
+    }
+}

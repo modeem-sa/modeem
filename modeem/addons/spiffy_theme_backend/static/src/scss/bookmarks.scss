@@ -1,0 +1,189 @@
+body.o_web_client {
+    // Header Right Contents Buttons(Bookmark,Zoom,magnifier)
+    .bookmark_section, .magnifier_section, .fullscreen_section, .search_view, .fav_app_drawer {
+        .dropdown-toggle, .magnifier_btn, .full_screen, .search_bar, .fav_app_drawer_btn {
+            width: 48px;
+            height: 40px;
+            line-height: 40px;
+            padding: 0 !important;
+            background-color: var(--biz-theme-primary-color) !important;
+            border-color: var(--biz-theme-primary-color) !important;
+            color: var(--biz-theme-primary-text-color) !important;
+            margin-bottom: 10px !important;
+            border-radius: var(--border-radius-md) 0px 0px var(--border-radius-md) !important;
+            font-size: 15px;
+        }
+    }
+
+    .bookmark_list, .bookmark_section {
+        p {
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 5px;
+            color: var(--biz-theme-body-text-color);
+        }
+    }
+
+    .bookmark_list {
+        order: 3;
+        display: grid;
+        .bookmark_div {
+            .bookmark_options {
+                .rename_bookmark, .remove_bookmark {
+                    cursor: pointer;
+                    color: var(--biz-theme-body-text-color);
+                    transition: 0.2s;
+                    &:hover {
+                        color: var(--biz-theme-primary-color);
+                    }
+                }
+            }
+            .bookmark_rename_section, .bookmark_options {
+                position: absolute;
+                z-index: 10;
+                background-color: var(--biz-theme-body-color);
+                border-radius: 6px;
+                min-width: 100px;
+                top: calc(100% + -8px);
+                right: 20px;
+            }
+            a.bookmark_tag {
+                width: 48px;
+                height: 40px;
+                line-height: 40px;
+                padding: 0 !important;
+                margin-bottom: 10px !important;
+                border-radius: var(--border-radius-md) 0px 0px var(--border-radius-md) !important;
+                background: var(--biz-theme-primary-rgba) !important;
+                border-color: var(--biz-theme-primary-rgba) !important;
+                color: #fff !important;
+            }
+            position: relative;
+        }
+    }
+    .bookmark_section {
+        order: 2;
+        .bookmark_page_add {
+            border-radius: 6px;
+            border: none !important;
+            .add_bookmark {
+                border: 0 !important;
+            }
+            .cancel_bookmark{
+                margin-right: 0 !important;
+            }
+        }
+        .dropdown-menu.show {
+            padding: 6px 12px;
+            top: 5px !important;
+        }
+        .dropdown-toggle::after {
+            border: 0 !important;
+            content: unset !important;
+        }
+    }
+
+    .header_menu_right_content {
+        right: 0px;
+        top: 50%;
+        z-index: 85 !important;
+
+        @include media-breakpoint-up(lg){
+            position: fixed !important;
+            transform: translateY(-50%);
+            display: grid !important;
+        }
+        @include media-breakpoint-down(lg){
+            padding: 0 !important;
+            margin-left: auto !important;
+            display: none !important;
+            /* .bookmark_list, .bookmark_section, .magnifier_section, .fullscreen_section, .search_view{
+                display: none!important;
+            } */
+        }
+        .magnifier_section {
+            order: 1;
+            .zoom-style {
+                // border: 1px solid #e2e2e2;
+                border-radius: 20px;
+                padding: 2px;
+            }
+            .zoom-style-box {
+                padding: 3px 7px;
+                border: 1px solid #e2e2e2;
+                border-radius: 3rem;
+                z-index: 1200;
+                box-shadow: var(--box-shadow-common);
+                transform: translate(-130px, -10px);
+            }
+            .zoom_value {
+                font-weight: 600;
+                // font-size: 16px;
+            }
+            .zoom-reset {
+                border-radius: var(--border-radius-md) !important;
+                margin: 0 !important;
+            }
+            .minus,.plus {
+                font-size: 23px;
+                text-align: center;
+                font-weight: 600;
+                width: 25px;
+                height: 25px;
+                // border-radius: 50% !important;
+                line-height: 23px;
+                padding: 0 !important;
+                margin: 2px !important;
+                border-color: #dee2e6 !important;
+                &:hover {
+                    background: var(--biz-theme-secondary-color);
+                }
+            }
+        }
+        .theme_selector {
+            .theme-edit {
+                cursor: pointer;
+                span {
+                    width: 40px;
+                    height: 40px;
+                    background-color: white;
+                    line-height: 40px;
+                    padding-left: 14px;
+                    color: #000000 !important;
+                }
+            }
+        }
+        .form-switch {
+            .label {
+                width: 50px;
+                height: 26px;
+                background-color: #111;
+                display: flex;
+                border-radius: 50px;
+                align-items: center;
+                justify-content: space-between;
+                padding: 5px;
+                position: relative;
+                transform: scale(1.5);
+            }
+        }
+    }
+}
+
+body.o_web_client.dark_mode {
+    .header_menu_right_content {
+        .magnifier_section {
+            .zoom-style-box {
+                background-color: var(--biz-theme-secondary-color) !important;
+                color: var(--biz-theme-secondary-text-color) !important;
+            }
+        }
+        .bookmark_page_add, .bookmark_rename_section {
+            .form-control {
+                background-color: var(--biz-theme-secondary-color) !important;
+                color: var(--biz-theme-secondary-text-color) !important;
+            }
+
+        }
+    }
+}

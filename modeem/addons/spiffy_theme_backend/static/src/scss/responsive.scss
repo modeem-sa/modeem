@@ -1,0 +1,244 @@
+body.o_web_client{
+    // CONTROL PANEL RESPONSIVE
+    @media (max-width: 1366px) {
+        .o_control_panel{
+            .o_cp_bottom{
+                .o_cp_bottom_right{
+                    .o_filter_menu, .o_group_by_menu, .o_favorite_menu{
+                        .o_dropdown_title{
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    } 
+
+    @include media-breakpoint-down(md) {
+        .o_control_panel{
+            padding: 5px 15px;
+            .o_cp_bottom{
+                .o_cp_bottom_left{
+                    .o_cp_buttons{
+                        .o_list_buttons{
+                            &.o-editing{
+                                .open_wizard_action{
+                                    padding: 8px;
+                                }
+                            }
+                        }
+                    }
+                }
+                .o_cp_bottom_right{
+                    .o_cp_switch_buttons{
+                        .dropdown-menu{
+                            &.show{
+                                display: flex;
+                            }
+                            // button {
+                            //     padding: 2px 7px !important;
+                            // }
+                            font-size: 12px;
+                            justify-content: end;
+                        }
+                    }
+                }
+                gap: 8px;
+            }
+        }
+    }
+    @media (min-width: 768px) and (max-width: 1199.98px) {
+        .o_control_panel {
+            .o_cp_bottom {
+                display: block !important;
+                .o_cp_bottom_left {
+                    width: 100% !important;
+                }
+                .o_cp_bottom_right {
+                    width: 100% !important;
+                }
+            }
+        }
+    }
+    @include media-breakpoint-between(md, xxl) {
+        .o_control_panel {
+            .o_cp_bottom {
+                .o_cp_bottom_left {
+                    .btn-group{
+                        gap: 8px;
+                    }
+                    .o_cp_buttons {
+                        .o_list_selection_box {
+                            border: 0;
+                            padding: 0.6rem 1rem !important;
+                            margin: 0;
+                        }
+                        gap: 8px;
+                    }
+                    .o_cp_action_menus {
+                        .dropdown-toggle {
+                            margin-right: 0;
+                        }
+                        margin-left: unset;
+                        padding: 0;
+                    }
+                }
+                .o_cp_bottom_right {
+                    > .o_cp_pager {
+                        margin: 0 !important;
+                        padding: 0 !important;
+                    }
+                    .btn-group {
+                        justify-content: end;
+                    }
+                    row-gap: 8px;
+                }
+                align-items: start !important;
+            }
+        }
+    }
+    @media (max-width: 767.98px) {
+        .o_control_panel{
+            .o_cp_top_left, .o_cp_top_right{
+                flex: 1 1 100%;
+            }
+            .o_cp_top_left{
+                flex-basis: 80%;
+            }
+            .o_cp_top_right{
+                flex-basis: 20%;
+            }
+            .o_searchview{
+                &.o_searchview_quick{
+                    display: flex;
+                    padding-right: 5px;
+                    flex: 1 1 auto;
+                    align-items: center;
+                    
+                    .o_searchview_input_container{
+                        margin-right: auto;
+                    }
+                }
+            }
+        }
+    }
+    @media (min-width: 768px) and (max-width: 991.98px){
+        .o_control_panel{
+            .o_cp_top_left, .o_cp_top_right{
+                flex: 1 1 100%;
+            }
+            .o_cp_top_left{
+                flex-basis: 50%;
+            }
+            .o_cp_top_right{
+                flex-basis: 50%;
+            }
+            .o_searchview{
+                &.o_searchview_quick{
+                    display: flex;
+                    padding-right: 5px;
+                    flex: 1 1 auto;
+                    align-items: center;
+                    
+                    .o_searchview_input_container{
+                        margin-right: auto;
+                    }
+                }
+            }
+        }
+        .o_content{
+            padding: 0 15px !important;
+        }
+    }
+
+    // FORM VIEW RESPONSIVE
+    @include media-breakpoint-up(lg) {
+        .o_form_view {
+            .o_form_sheet_bg {
+                > .o_form_sheet{
+                    margin: 12px auto;
+                }
+            }
+        }
+    }
+    @include media-breakpoint-down(md) {
+        .o_Discuss{
+            padding: 0 15px;
+        }
+        .o_content{
+            // .o_form_view, .o_list_view, .o_calendar_container, .o_kanban_view{
+            //     padding: 0 15px !important;
+            // }
+            padding: 0 15px !important;
+        }
+        .o_form_view{
+            .o_FormRenderer_chatterContainer{
+                padding: 15px 0;
+            }
+
+            padding: 0;
+            .o_form_sheet {
+                margin: 0;
+                margin-top: 15px;
+                min-width: unset;
+            }
+            &.o_form_readonly{
+                .o_group {
+                    table.o_group.o_inner_group {
+                        tbody {
+                            tr {
+                                td {
+                                    &.o_td_label{
+                                        flex: unset;
+                                        max-width: 130px;
+                                        min-width: 130px;
+    
+                                        label{
+                                            overflow: hidden;
+                                            text-overflow: ellipsis;
+                                            word-break: break-all;
+                                            max-width: 120px;
+                                        }
+                                    }
+                                    width: unset !important;
+                                }
+                                flex-direction: row;
+                            }
+                        }
+                    } 
+                }
+            }
+            .o_group {
+                table.o_group.o_inner_group {
+                    width: 100%;
+                } 
+            }
+            .o_notebook {
+                .o_notebook_headers {
+                    .nav-tabs {
+                        .nav-link {
+                            width: max-content;
+                        }
+                        flex-wrap: nowrap;
+                        overflow-x: auto;
+                        overflow-y: hidden;
+                        &::-webkit-scrollbar {
+                            width: 0;
+                            height: 0;
+                        }
+                    }
+                }
+                .tab-content {
+                    > .tab-pane{
+                        padding: 9px 0;
+                    }
+                    .o_kanban_mobile {
+                        .oe_kanban_card {
+                            margin-bottom: 8px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+} 

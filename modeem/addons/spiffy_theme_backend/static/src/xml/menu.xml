@@ -1,0 +1,408 @@
+<templates id="template" xml:space="preserve">
+	<t t-name="SearchModalPopup" owl="1">
+		<div class="modal" id="search_bar_modal">
+			<div class="modal-dialog modal-dialog-scrollable">
+				<div class="modal-content p-0">
+					<!-- Modal Header -->
+					<div class="modal-header d-block">
+						<div class="d-flex px-3 align-items-center justify-content-between">
+							<h4 class="modal-title">Search..</h4>
+							<button type="button" class="btn-close" data-bs-dismiss="modal">
+								<!-- <span class="ri ri-close-line align-middle"></span> -->
+							</button>
+						</div>
+					</div>
+					<div class="modal-body px-0">
+						<div class="d-flex align-items-center mb-4 px-3">
+							<div class="load-active-menu-selector w-25">
+								<t t-call="seletor-acvtive-menu-items"/>
+							</div>
+							<input type="text" id="searchPagesInput" 
+								class="form-control form-control-size borderless auto-complete" autocomplete="off" 
+								placeholder="Search here..." value="" />
+						</div>
+						<ul id="searchPagesResults" class="auto-complete-result mb-0 px-3">
+						</ul>
+						<div class="searchNoResult px-3 d-none">
+							<h3>No Results Found!</h3>
+						</div>
+					</div>
+					<div class="flex-row-reverse modal-footer px-0">
+						<div class="pb-3 px-3">
+							<span class="text-alternate d-inline-block m-0 me-3">
+								<span class="ri ri-arrow-up-down-line align-middle"></span>
+								<span class="align-middle text-medium">Navigate</span>
+							</span>
+							<span class="text-alternate d-inline-block m-0">
+								<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="cs-icon arrow-bottom-left text-alternate align-middle me-1"><path d="M7 8L2.35355 12.6464C2.15829 12.8417 2.15829 13.1583 2.35355 13.3536L7 18"></path><path d="M17.5 2V9C17.5 10.0609 17.0786 11.0783 16.3284 11.8284C15.5783 12.5786 14.5609 13 13.5 13H2"></path></svg>
+								<span class="align-middle text-medium">Select</span>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</t>
+
+	<t t-name="seletor-acvtive-menu-items" owl="1">
+		<div class="form-group mb-0">
+		  <select class="form-control border-0 border-bottom p-0 text-truncate" id="active-menu-categories">
+			<option id="0" value="all">All</option>
+			<t t-foreach="menuService.getApps()" t-as="menu" t-key="menu.name">
+				<option t-att-id="menu.id" t-att-value="menu.name"><t t-esc="menu.name"/></option>
+			</t>
+		  </select>
+		</div>
+	</t>
+
+	<!-- A search result -->
+    <t t-name="spiffy_theme_backend.MenuSearchResults">
+        <t t-foreach="results" t-as="result" t-key="result.id">
+            <t t-set="menu" t-value="widget._menuInfo(result)" />
+			<li class="search_list_content list-unstyled">
+				<a
+					t-attf-class="autoComplete_highlighted text-small text-muted mb-0"
+					t-attf-href="#menu_id={{menu.id}}&amp;action={{menu.actionID}}"
+					t-att-data-menu-id="menu.id"
+					t-att-data-action-id="menu.actionID"
+					t-esc="result"
+					role="menuitem"
+				/>
+			</li>
+        </t>
+    </t>
+	
+	<t t-inherit="web.NavBar" t-inherit-mode="extension" owl="1">
+		<xpath expr="//nav[hasclass('o_main_navbar')]" position="before">
+          	<!-- SPIFFY MULTI TAB START -->
+			<div class="multi_tab_section"/>
+          	<!-- SPIFFY MULTI TAB END -->
+			<div class="fav_app_island d-none">
+				<span class="ri ri-apps-2-line fav_app_island_btn"/>
+				<div class="fav_apps d-flex alige-items-center justify-content-center">
+				</div>
+			</div>
+			<div class="float-end d-flex align-items-center header_menu_right_content flex-wrap">
+				<li class="bookmark_list list-unstyled"></li>
+
+				<li class="bookmark_section list-unstyled">
+					<div class="dropdown">
+						<button type="button" class="btn btn-light dropdown-toggle demo_btn" data-bs-toggle="dropdown" title="Add Bookmark">
+							<span class="fa fa-bookmark-o" />
+						</button>
+						<div class="dropdown-menu bookmark_page_add">
+							<p class="">Add Bookmark</p>
+							<div class="form-group">
+								<input type="text" class="form-control" name="bookmark_page_name" id="bookmark_page_name" />
+							</div>
+							<div class="dropdown-divider"></div>
+							<div class="d-flex">
+								<a class="btn btn-primary add_bookmark">Add</a>
+								<a class="btn btn-secondary me-0 cancel_bookmark">Cancel</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="fav_app_drawer list-unstyled">
+					<button type="button" class="btn btn-light fav_app_drawer_btn" title="Favourite Apps">
+						<span class="ri ri-star-line"/>
+					</button>
+				</li>
+
+				<li class="magnifier_section list-unstyled">
+					<div class="">
+						<button type="button" class="btn btn-light magnifier_btn demo_btn" data-bs-target="#magnifier" data-bs-toggle="collapse" title="Magnifier">
+							<span class="fa fa-search-plus" />
+						</button>
+						<div id="magnifier" class="collapse position-absolute bg-white zoom-style-box">
+							<div class="d-flex align-items-center">
+								<span class="zoom_value ps-2">100</span>
+								<span>%</span>
+								<div class="zoom-style d-flex align-items-center mx-2">
+									<a class="btn btn-small minus">-</a>
+									<a class="btn btn-small plus">+</a>
+								</div>
+								<a class="fa fa-repeat zoom-reset btn btn-secondary reset"></a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="search_view list-unstyled">
+					<button type="button" class="btn btn-light search_bar demo_btn" accesskey="H" title="Search">
+						<span class="fa fa-search" />
+					</button>
+				</li>
+				<li class="fullscreen_section list-unstyled">
+					<a class="btn btn-light full_screen demo_btn" accesskey="F" title="FullScreen">
+						<span class="fa fa-expand" />
+					</a>
+				</li>
+			</div>
+			<!-- SEARCH MODAL -->
+			<t t-call="SearchModalPopup"/>
+			<div class="dynamic_data" />
+			<div class="navbar_to_do_list_data" />
+		</xpath>
+		<xpath expr="//nav[hasclass('o_main_navbar')]" position="replace">
+			<nav class="o_main_navbar" t-on-dropdown-item-selected="onNavBarDropdownItemSelection" data-command-category="navbar">
+				<div class="o_app_drawer">
+					<li class="list-unstyled">
+						<a class="appDrawerToggle me-3" accesskey="A">
+							<span class="ri ri-apps-2-line"/>
+						</a>
+					</li>
+				</div>
+				<div class="o_company_logo">
+					<t t-if="currentCompany">
+						<img class="img img-fluid company_logo" t-attf-src="/web/image?model=res.company&amp;field=backend_menubar_logo&amp;id={{currentCompany.id}}"/>
+						<img class="img img-fluid company_logo_icon d-none" t-attf-src="/web/image?model=res.company&amp;field=backend_menubar_logo_icon&amp;id={{currentCompany.id}}"/>
+					</t>
+				</div>
+
+				<!-- Systray -->
+				<div class="o_menu_systray" role="menu">
+
+					<t t-foreach="systrayItems" t-as="item" t-key="item.key">
+						<!-- This ensures the correct order of the systray items -->
+						<div t-att-data-index="item.index"/>
+						<ErrorHandler onError="error => this.handleItemError(error, item)">
+							<t t-component="item.Component" t-props="item.props"/>
+						</ErrorHandler>
+					</t>
+				</div>
+
+				<!-- Apps Menu -->
+				<t t-call="web.NavBar.AppsMenu">
+					<t t-set="apps" t-value="menuService.getApps()" />
+				</t>
+
+				<div class="favorite_apps_section d-none"></div>
+
+				<!-- <div class="mobile-header-toggle d-lg-none d-block">
+					<a id="mobileMenuToggleBtn" class="menu-button">
+						<span class="ri ri-menu-line align-middle"></span>
+					</a>
+				</div> -->
+
+				<!-- App Brand -->
+				<DropdownItem
+					t-if="currentApp"
+					href="getMenuItemHref(currentApp)"
+					t-esc="currentApp.name"
+					class="'o_menu_brand d-none d-md-block'"
+					dataset="{ menuXmlid: currentApp.xmlid, section: currentApp.id }"
+					onSelected="() => this.onNavBarDropdownItemSelection(currentApp)"
+				/>
+
+				<!-- Current App Sections -->
+				<t t-if="currentAppSections.length and !env.isSmall and !isIpad" t-call="web.NavBar.SectionsMenu">
+					<t t-set="sections" t-value="currentAppSections" />
+				</t>
+				<!-- Mobile App sections -->
+				<t t-call="spiffy.Mobile.SectionsMenu">
+					<t t-set="sections" t-value="currentAppSections" />
+				</t>
+			</nav>
+		</xpath>
+	</t>
+
+	<t t-name="spiffy.Mobile.SectionsMenu" owl="1">
+		<div class="o_menu_sections d-none">
+			<a id="mobileMenuclose" class="menu-button" style="display: none;">
+				<span class="ri ri-close-line align-middle"></span>
+			</a>
+			<t t-foreach="sections" t-as="first_level_menu" t-key="first_level_menu.id">
+				<t t-if="!first_level_menu.childrenTree.length">
+					<t t-call="spiffy.Menu.link">
+						<t t-set="inNavbar" t-value="true"/>
+						<t t-set="menu" t-value="first_level_menu"/>
+					</t>
+				</t>
+				<t t-else="">
+					<li class="list-unstyled">
+						<a href="#" class="dropdown-toggle o-no-caret o_menu_header_lvl_1" t-att-data-menu-xmlid="first_level_menu.xmlid" data-bs-toggle="dropdown" data-display="static" role="button" aria-expanded="false">
+							<t t-esc="first_level_menu.name"/>
+						</a>
+						<div class="dropdown-menu" role="menu">
+							<t t-foreach="first_level_menu.childrenTree" t-as="second_level_menu" t-key="second_level_menu.id">
+								<t t-call="spiffy.Menu.link">
+									<t t-set="depth" t-value="1"/>
+									<t t-set="menu" t-value="second_level_menu"/>
+								</t>
+							</t>
+						</div>
+					</li>
+				</t>
+			</t>
+		</div>
+	</t>
+
+	<t t-name="spiffy.Menu.link" owl="1">
+		<t t-set="depth" t-value="(depth || 0) + 1"/>
+
+		<t t-if="!menu.childrenTree.length">
+			<a role="menuitem" t-attf-href="#menu_id={{menu.id}}&amp;action={{menu.actionID ? menu.actionID : ''}}"
+					t-att-data-menu="menu.id"
+					t-att-data-action-model="menu.actionModel"
+					t-att-data-action-id="menu.actionID"
+					t-att-data-menu-xmlid="menu.xmlid"
+					t-attf-class="{{inNavbar ? '' : 'dropdown-item '}}o_menu_entry_lvl_{{depth}}"
+					>
+					<span><t t-esc="menu.name"/></span>
+			</a>
+		</t>
+		<t t-else="">
+			<div t-attf-class="dropdown-header o_menu_header_lvl_{{depth}}">
+				<span><t t-esc="menu.name"/></span>
+			</div>
+			<t t-foreach="menu.childrenTree" t-as="menu" t-key="menu.id">
+				<t t-call="spiffy.Menu.link"/>
+			</t>
+		</t>
+	</t>
+
+	<t t-inherit="web.NavBar.AppsMenu" t-inherit-mode="extension" owl="1">
+		<xpath expr="//Dropdown" position="replace">
+			<div class="o_navbar_apps_menu">
+				<t t-call="AllAppsMenus"/>
+				<div class="appdrawer_section">
+					<div class="top_navbar_section mb-3 mb-md-5">
+						<a class="close_fav_app_btn d-none">
+							<span class="ri ri-arrow-left-s-line"/>
+						</a>
+					</div>
+					<div class="container">
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text">
+									<i class="ri ri-search-line"></i>
+								</span>
+							</div>
+							<input type="text" id="app_menu_search" class="form-control" placeholder="Search"/>
+						</div>
+						<div class="apps-list mt-3 mt-md-5">
+							<div class="row m-0">
+								<t t-foreach="menuService.getApps()" t-as="app" t-key="app.id">
+									<div class="app-box mb16">
+										<a role="menuitem" t-attf-href="#menu_id={{app.id}}" class="d-block o_app text-center text-center" t-att-data-menu-id="app.id" t-att-data-menu-xmlid="app.xmlID" t-att-data-action-id="app.actionID">
+											<div class="app-image mb8">
+											</div>
+											<div class="app-name">
+												<t t-esc="app.name" />
+											</div>
+										</a>
+										<div class="fav_app_select d-none ">
+											<span class="ri ri-check-line"/>
+										</div>
+									</div>
+								</t>
+							</div>
+							<div id="searched_main_apps" class="d-none flex-wrap"></div>
+							<div id="search_result"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</xpath>
+	</t>
+
+	<t t-inherit="web.NavBar.SectionsMenu.Dropdown.MenuSlot" t-inherit-mode="extension" owl="1">
+		<!-- code commented for website module HTML editor and other link not working -->
+		<!-- <xpath expr="//t[@t-foreach='items']" position="replace">
+			<t t-foreach="items" t-as="item" t-key="item.id">
+				<a t-if="!item.childrenTree.length" role="menuitem" t-att-data-menu="item.id" t-att-data-action-id="item.actionID" t-attf-href="#menu_id={{item.id}}&amp;action_id={{item.actionID}}" t-att-data-menu-xmlid="item.xmlid" class="dropdown-item o_menu_entry_lvl_2" t-esc="item.name"/>
+
+				<t t-else="">
+					<div class="dropdown-header" t-esc="item.name" />
+					<a t-foreach="item.childrenTree" t-as="subItem" t-key="subItem.id" role="menuitem" t-att-data-menu="subItem.id" t-att-data-action-id="subItem.actionID" t-attf-href="#menu_id={{subItem.id}}&amp;action_id={{subItem.actionID}}" t-att-data-menu-xmlid="subItem.xmlid" class="dropdown-item o_menu_entry_lvl_2" t-esc="subItem.name"
+					/>
+				</t>
+			</t>
+		</xpath> -->
+	</t>
+
+	<t t-name="AllmenuRecursive" owl="1">
+		<li class="nav-item">
+			<t t-if="menu.childrenTree.length">
+				<p class="bg-muted">
+					<a class="d-flex align-items-center w-100" data-bs-toggle="collapse" t-attf-data-bs-target="#child_menu_{{menu.id}}" t-att-data-menu-xmlid="menu.xmlid">
+						<span><t t-esc="menu.name"/></span>
+						<span class="ri ri-arrow-right-s-line ms-auto"/>
+					</a>
+				</p>
+			</t>
+			<t t-else="">
+				<a t-att-data-menu="menu.id" t-attf-class="child_menus" t-attf-href="#menu_id={{menu.id}}&amp;action={{menu.actionID ? menu.actionID : ''}}" t-att-data-menu-xmlid="menu.xmlid" t-attf-data-action-id="{{menu.actionID ? menu.actionID : ''}}">
+					<span class="app_name">
+						<t t-esc="menu.name" />
+					</span>
+				</a>
+			</t>
+			<div t-attf-id="child_menu_{{menu.id}}" class="collapse" >
+				<ul t-if="menu.childrenTree.length" class="show">
+					<t t-foreach="menu.children" t-as="menuid" t-key="menuid">
+						<t t-set="menu" t-value="menuService.getMenuAsTree(menuid)"/>
+						<t t-call="AllmenuRecursive" />
+					</t>
+				</ul>
+			</div>
+		</li>
+	</t>
+
+	<t t-name="AllAppsMenus" owl="1">
+		<ul id="accordion">
+			<!-- <t t-if="currentApp"> -->
+				<t t-foreach="menuService.getApps()" t-as="menu" t-key="menu.name">
+					<t t-if="!menu.childrenTree.length">
+						<li>
+							<!-- t-attf-class="main_link {{currentApp.name == menu.name ? 'active':''}}" -->
+							<a t-attf-href="#menu_id={{menu.id}}&amp;action={{menu.actionID ? menu.actionID : ''}}"
+								t-att-data-menu="menu.id"
+								t-attf-data-action-model="{{menu.actionModel ? menu.actionModel : ''}}"
+								t-attf-data-action-id="{{menu.actionID ? menu.actionID : ''}}"
+								t-att-data-menu-xmlid="menu.xmlid" t-attf-class="main_link">
+								<span class="app_icon"></span>
+								<span>
+									<t t-esc="menu.name" />
+								</span>
+							</a>
+						</li>
+					</t>
+					<t t-else="">
+						<li>
+							<!-- t-attf-class="main_link {{currentApp.name == menu.name ? 'active':''}}" -->
+							<a t-attf-href="#menu_id={{menu.id}}&amp;action={{menu.actionID ? menu.actionID : ''}}" t-att-data-menu="menu.id"
+								t-attf-data-action-model="{{menu.actionModel ? menu.actionModel : ''}}"
+								t-attf-data-action-id="{{menu.actionID ? menu.actionID : ''}}"
+								t-att-data-menu-xmlid="menu.xmlid" t-attf-class="main_link dropdown-btn">
+								<span class="app_icon"></span>
+								<span>
+									<t t-esc="menu.name" />
+								</span>
+								<span class="ri ri-arrow-right-s-line ms-auto" />
+							</a>
+							<!-- <ul t-attf-class="{{currentApp.name == menu.name ? 'show':''}}"> -->
+							<ul t-attf-class="header-sub-menus">
+								<t t-set="parent_menu_id" t-value="menu.id" />
+								<t t-foreach="menu.children" t-as="menuid" t-key="menuid">
+									<t t-set="menu" t-value="menuService.getMenuAsTree(menuid)"/>
+									<t t-call="AllmenuRecursive">
+									</t>
+								</t>
+							</ul>
+						</li>
+					</t>
+				</t>
+			<!-- </t> -->
+		</ul>
+	</t>
+
+	<t t-inherit="web.BurgerMenu" t-inherit-mode="extension" owl="1">
+		<xpath expr="//button[hasclass('o_mobile_menu_toggle')]" position="attributes">
+			<attribute name="class" add="d-lg-none" remove="d-md-none" separator=" "/>
+		</xpath>
+		<xpath expr="//button[hasclass('o_mobile_menu_toggle')]/i[hasclass('oi')]" position="replace">
+			<i class="ri ri-menu-line align-middle"/>
+		</xpath>
+	</t>
+</templates>

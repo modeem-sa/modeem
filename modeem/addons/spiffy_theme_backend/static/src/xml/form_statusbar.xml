@@ -1,0 +1,19 @@
+<templates id="template" xml:space="preserve">
+    <t t-inherit="web.FormStatusIndicator" t-inherit-mode="extension" owl="1">
+        <xpath expr="//div[hasclass('o_form_status_indicator_buttons')]" position="after">
+            <span
+                t-if="displayAutoSavePrevent and (props.model.root.isVirtual or displayButtons)"
+                class="text-danger small disble-auto-save ms-2">
+                <i class="fa fa-warning me-2"/>
+                <span t-esc="prevent_auto_save_warning_msg">
+                    Autosave is disabled, Click on save button.
+                </span>
+            </span>
+        </xpath>
+
+        <xpath expr="//button[hasclass('o_form_button_save')]/i" position="attributes">
+            <attribute name="class" add="ri ri-save-3-line" remove="fa fa-cloud-upload" separator=" "></attribute>
+        </xpath>
+        
+    </t>
+</templates>

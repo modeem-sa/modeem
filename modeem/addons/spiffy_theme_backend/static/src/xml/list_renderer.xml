@@ -1,0 +1,39 @@
+<templates id="template" xml:space="preserve">
+    <t t-inherit="web.ListRenderer.RecordRow" t-inherit-mode="extension" owl="1">
+        <xpath expr="//tr[hasclass('o_data_row')]" position="attributes">
+            <attribute name="t-att-resId">record.resId</attribute>
+        </xpath>
+        <xpath expr="//tr[hasclass('o_data_row')]" position="after">
+            <t t-if="biz_attachment_data and showattachment">
+                <t t-if="biz_attachment_data[0][record.resId]">
+                    <div class="attachment_div">
+                        <section class="biz_attachment_section d-flex align-items-center justify-content-center w-100 position-absolute flex-wrap" t-att-id="record.id">
+                            <t t-set="counter" t-value="0"/>
+                            <t t-set="extra_length" t-value="biz_attachment_data[0][record.resId].length - 5"/>
+
+                            <t t-foreach="biz_attachment_data[0][record.resId]" t-as="attachment" t-key="attachment.attachment_id">
+                                <t t-if="counter &lt; 5">
+                                    <div class="attachment_box border d-flex align-items-center mx-2" t-att-data-id="attachment.attachment_id" t-att-data-name="attachment.attachment_name" t-att-data-mimetype="attachment.attachment_mimetype" t-att-data-rec_id="record.resId" t-on-click="(ev) => this._loadattachmentviewer(ev)">
+                                        <span class="o_image me-2" t-att-data-mimetype="attachment.attachment_mimetype"/>
+                                        <div class="attachment-name text-nowrap">
+                                            <span><t t-esc="attachment.attachment_name"/></span>
+                                        </div>
+                                    </div>
+                                    <t t-set="counter" t-value="counter + 1"/>
+                                </t>
+                            </t>
+                            <t t-if="extra_length >= 1">
+                                <t t-set="attachment" t-value="biz_attachment_data[0][record.resId][5]"/>
+                                <div class="attachment_box border d-flex align-items-center mx-2 attachment_box_counter " t-att-data-id="attachment.attachment_id" t-att-data-name="attachment.attachment_name" t-att-data-mimetype="attachment.attachment_mimetype" t-att-data-rec_id="record.resId" t-on-click="(ev) => this._loadattachmentviewer(ev)">
+                                    <div class="attachment-name text-nowrap">
+                                        <span>+<t t-esc="extra_length"/></span>
+                                    </div>
+                                </div>
+                            </t>
+                        </section>
+                    </div>
+                </t>
+            </t>
+        </xpath>
+    </t>
+</template>

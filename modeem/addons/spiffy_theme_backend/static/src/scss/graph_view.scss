@@ -1,0 +1,18 @@
+body.o_web_client{
+    .o_graph_controller {
+        @include media-breakpoint-down(sm){
+            .o_control_panel {
+                .o_cp_buttons {
+                    button {
+                        margin-right: 8px !important;
+                    }
+                    display: flex;
+                    flex-wrap: wrap;
+                }
+            }
+            .o_graph_renderer {
+                padding: 30px 15px !important;
+            }
+        }
+    }
+}

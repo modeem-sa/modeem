@@ -1,0 +1,34 @@
+body.o_web_client {
+    .o_ChatWindowManager{
+        .o_MessageList, .o_MessageList_separatorLabel, .o_ChatWindow, .o_Composer, .o_Message, .o_Composer_textInput, .o_Composer_toolButtons{
+            background-color: var(--biz-theme-body-color);
+            color: var(--biz-theme-body-text-color);
+        }
+        input,textarea,.o_Composer_button{
+            color: var(--biz-theme-body-text-color);
+            background-color: transparent;
+            box-shadow: none;
+            outline: none;
+        }
+        .o_ChatWindow{
+            border-top-left-radius: var(--border-radius-lg) !important;
+            border-top-right-radius: var(--border-radius-lg) !important;
+            .o_ChatWindowHeader{
+                background-color: var(--biz-theme-primary-color) !important;
+                color: var(--biz-theme-primary-text-color) !important;
+                border-top-left-radius: var(--border-radius-lg);
+                border-top-right-radius: var(--border-radius-lg);
+            }
+            .o_ChatWindow_newMessageForm{
+                .o_ChatWindow_newMessageFormLabel{
+                    color: var(--biz-theme-body-text-color);
+                }
+                .o_ChatWindow_newMessageFormInput{
+                    border: 0;
+                    border-bottom: 1px solid;
+                    border-color: var(--biz-theme-body-text-color) !important;
+                }
+            }
+        }
+    }
+}

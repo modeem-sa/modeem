@@ -1,0 +1,102 @@
+<templates id="template" xml:space="preserve">
+    <t t-name="spiffy_theme_backend.icon_button">
+        <span t-attf-class="fa fa-#{icon} align-middle" t-att-title="label" />
+        <span class="d-none d-xl-inline" t-esc="label" />
+    </t>
+    <t t-name="spiffy_theme_backend.MenuStatusbarButtons">
+        <div class="dropdown">
+            <button
+                class="o_statusbar_buttons_dropdown btn btn-secondary dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+            >
+                <t t-call="spiffy_theme_backend.icon_button">
+                    <t t-set="icon" t-value="'cogs'" />
+                    <t t-set="label">Quick actions</t>
+                </t>
+            </button>
+        </div>
+    </t>
+    <t t-extend="FormView.buttons">
+        <t t-jquery=".o_form_button_edit" t-operation="attributes">
+            <attribute name="accesskey">e</attribute>
+        </t>
+        <t t-jquery=".o_form_button_cancel" t-operation="attributes">
+            <attribute name="accesskey">d</attribute>
+        </t>
+        <t t-jquery=".o_form_button_edit" t-operation="inner">
+            <t t-call="spiffy_theme_backend.icon_button">
+                <t t-set="icon" t-value="'pencil'" />
+                <t t-set="label">Edit</t>
+            </t>
+        </t>
+        <t t-jquery=".o_form_button_create" t-operation="inner">
+            <t t-call="spiffy_theme_backend.icon_button">
+                <t t-set="icon" t-value="'plus'" />
+                <t t-set="label">Create</t>
+            </t>
+        </t>
+        <t t-jquery=".o_form_button_save" t-operation="inner">
+            <t t-call="spiffy_theme_backend.icon_button">
+                <t t-set="icon" t-value="'check'" />
+                <t t-set="label">Save</t>
+            </t>
+        </t>
+        <t t-jquery=".o_form_button_cancel" t-operation="inner">
+            <t t-call="spiffy_theme_backend.icon_button">
+                <t t-set="icon" t-value="'times'" />
+                <t t-set="label">Discard</t>
+            </t>
+        </t>
+    </t>
+    <t t-extend="KanbanView.buttons">
+        <t t-jquery="button" t-operation="inner">
+            <t t-call="spiffy_theme_backend.icon_button">
+                <t t-set="icon" t-value="'plus'" />
+                <t t-set="label" t-value="create_text || _t('Create')" />
+            </t>
+        </t>
+    </t>
+    <t t-extend="ListView.buttons">
+        <!-- Change "Discard" button hotkey to "D" -->
+        <t t-jquery=".o_list_button_discard" t-operation="attributes">
+            <attribute name="accesskey">d</attribute>
+        </t>
+        <t t-jquery=".o_list_button_add" t-operation="inner">
+            <t t-call="spiffy_theme_backend.icon_button">
+                <t t-set="icon" t-value="'plus'" />
+                <t t-set="label">Create</t>
+            </t>
+        </t>
+        <t t-jquery=".o_list_button_save" t-operation="inner">
+            <t t-call="spiffy_theme_backend.icon_button">
+                <t t-set="icon" t-value="'check'" />
+                <t t-set="label">Save</t>
+            </t>
+        </t>
+        <t t-jquery=".o_list_button_discard" t-operation="inner">
+            <t t-call="spiffy_theme_backend.icon_button">
+                <t t-set="icon" t-value="'times'" />
+                <t t-set="label">Discard</t>
+            </t>
+        </t>
+        <t t-jquery=".o_list_export_xlsx" t-operation="replace">
+            <button type="button" class="btn btn-secondary o_list_export_xlsx">
+                <t t-call="spiffy_theme_backend.icon_button">
+                    <t t-set="icon" t-value="'download'" />
+                    <t t-set="label">Export All</t>
+                </t>
+            </button>
+        </t>
+    </t>
+    <t t-extend="CalendarView.navigation_buttons">
+        <t t-jquery=".o_calendar_button_today" t-operation="inner">
+            <t t-call="spiffy_theme_backend.icon_button">
+                <t t-set="icon" t-value="'calendar-check-o'" />
+                <t t-set="label">Today</t>
+            </t>
+        </t>
+    </t>
+</templates>

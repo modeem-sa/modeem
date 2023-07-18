@@ -1,0 +1,58 @@
+body.o_web_client{
+    .o_activity_view{
+        padding: 30px 0 30px 0px !important;
+        .table-bordered{
+            border-radius: 0.475rem !important;
+            box-shadow: 0px 0px 3px -1px var(--biz-theme-body-text-color) !important;
+            background-color: transparent !important;
+            thead{
+                tr{
+                    th{
+                        border-top: 0 !important;
+                        font-weight: 600 !important;
+                        border-bottom: 0 !important;
+                        border-left: 0 !important;
+                        &:focus-within{
+                            background-color: unset !important;
+                        }
+                    }
+                }
+            }
+            tbody{
+                tr{
+                    background-color: var(--biz-theme-body-color) !important;
+                    color: var(--biz-theme-body-text-color) !important; 
+                    .o_activity_summary_cell.o_activity_empty_cell{
+                        background-color: var(--biz-theme-body-color);
+                        color: var(--biz-theme-body-text-color); 
+                    }
+                }
+            }
+            tfoot{
+                tr{
+                    
+                    td.o_record_selector{
+                         background-color: var(--biz-theme-secondary-color) !important;
+                         color: var(--biz-theme-secondary-text-color) !important; 
+                    }
+                }
+            }
+        }
+
+        @include media-breakpoint-down(sm){
+            padding: 30px 15px !important;
+        }
+    }
+}
+body.o_web_client.dark_mode{
+    .o_activity_view{
+        .table-bordered{
+            thead{
+                tr{
+                    background-color: rgba($color: #ffffff, $alpha: 0.2);
+                    color: #ffffff;                  
+                }
+            }
+        }
+    }
+}

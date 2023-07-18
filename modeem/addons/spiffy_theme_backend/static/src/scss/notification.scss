@@ -1,0 +1,23 @@
+/* Notification Toast Popup style */
+body.o_web_client {
+     .o_notification_manager{
+        .o_notification{
+            border-radius: var(--border-radius-lg);
+            border: 0;
+            box-shadow: var(--box-shadow-common);
+
+            *{
+                border: 0;
+            }
+            .o_notification_title{
+                font-size: 1.1667rem;
+            }
+            .o_notification_content{
+                ul{
+                    list-style-type: circle;
+                    padding-left: 25px;
+                }
+            }
+        }
+    }
+}

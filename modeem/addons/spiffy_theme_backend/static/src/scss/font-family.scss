@@ -1,0 +1,153 @@
+@font-face{
+    font-family:"poppins";
+    src:url("/spiffy_theme_backend/static/lib/Poppins/Poppins-Regular.ttf") format("truetype");
+}
+
+@font-face{
+    font-family:"rubik";
+    src:url("/spiffy_theme_backend/static/lib/Rubik/Rubik-Regular.ttf") format("truetype");
+}
+
+@font-face{
+    font-family:"inter";
+    src:url("/spiffy_theme_backend/static/lib/Inter/Inter-Regular.ttf") format("truetype");
+}
+
+@font-face{
+    font-family:"josefin_sans";
+    src:url("/spiffy_theme_backend/static/lib/Josefin_Sans/JosefinSans-Regular.ttf") format("truetype");
+}
+
+@font-face{
+    font-family:"varela_round";
+    src:url("/spiffy_theme_backend/static/lib/Varela_Round/VarelaRound-Regular.ttf") format("truetype");
+}
+
+@font-face{
+    font-family:"manrope";
+    src:url("/spiffy_theme_backend/static/lib/Manrope/Manrope-Regular.ttf") format("truetype");
+}
+
+@font-face{
+    font-family:"Nunito_Sans";
+    src:url("/spiffy_theme_backend/static/lib/Nunito_Sans/NunitoSans-Regular.ttf") format("truetype");
+}
+
+body{
+    &.font_family_lato{
+        font-family:"Lato";
+    }
+    &.font_family_montserrat{
+        font-family:"Montserrat";
+    }
+    &.font_family_open_sans{
+        font-family:"Open_Sans";
+    }
+    &.font_family_oswald{
+        font-family:"Oswald";
+    }
+    &.font_family_raleway{
+        font-family:"Raleway";
+    }
+    &.font_family_roboto{
+        font-family:"Roboto";
+    }
+    &.font_family_poppins{
+        font-family:"poppins";
+    }
+    &.font_family_rubik{
+        font-family:"rubik";
+    }
+    &.font_family_inter{
+        font-family:"inter";
+    }
+    &.font_family_josefin_sans{
+        font-family:"josefin_sans";
+    }
+    &.font_family_varela_round{
+        font-family:"varela_round";
+    }
+    &.font_family_manrope{
+        font-family:"manrope";
+    }
+    &.font_family_Nunito_Sans{
+        font-family:"Nunito_Sans";
+    }
+
+    .dynamic_data{
+        #font_family{
+            .text-style-design{
+                font-size: 16px;
+            }
+            .font_family_lato{
+                .text-style-design{
+                    font-family:"Lato";
+                }
+            }
+            .font_family_montserrat{
+                .text-style-design{
+                    font-family:"Montserrat";
+                }
+            }
+            .font_family_open_sans{
+                .text-style-design{
+                    font-family:"Open_Sans";
+                }
+            }
+            .font_family_oswald{
+                .text-style-design{
+                    font-family:"Oswald";
+                }
+            }
+            .font_family_raleway{
+                .text-style-design{
+                    font-family:"Raleway";
+                }
+            }
+            .font_family_roboto{
+                .text-style-design{
+                    font-family:"Roboto";
+                }
+            }
+            .font_family_poppins{
+                .text-style-design{
+                    font-family:"poppins";
+                }
+            }
+            .font_family_rubik{
+                .text-style-design{
+                    font-family:"rubik";
+                }
+            }
+            .font_family_inter{
+                .text-style-design{
+                    font-family:"inter";
+                }
+            }
+            .font_family_josefin_sans{
+                .text-style-design{
+                    font-family:"josefin_sans";
+                }
+            }
+            .font_family_varela_round{
+                .text-style-design{
+                    font-family:"varela_round";
+                }
+            }
+            .font_family_manrope{
+                .text-style-design{
+                    font-family:"manrope";
+                }
+            }
+            .font_family_Nunito_Sans{
+                .text-style-design{
+                    font-family:"Nunito_Sans";
+                }
+            }
+        }
+    }
+
+    h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+        font-family: inherit;
+    }
+}
