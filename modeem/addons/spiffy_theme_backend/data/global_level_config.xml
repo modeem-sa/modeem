@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<modeem>
-    <data noupdate="1">
-         <record id="base.user_admin" model="res.users">
-            <field name="backend_theme_config" ref="spiffy_theme_backend.backend_config_data"></field>
-        </record>
-    </data>
-</modeem>
